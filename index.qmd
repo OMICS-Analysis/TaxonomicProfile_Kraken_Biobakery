@@ -122,6 +122,48 @@ metaphlan --install --bowtie2db /home/ubuntu/data/metaphlan_db --index mpa_vOct2
 
 ```
 
+### CutAdapt
+
+```{bash, eval=FALSE}
+
+```
+
+### Trimmomatic
+
+```{bash, eval=FALSE}
+
+```
+
+### KneadData
+
+```{bash, eval=FALSE}
+
+```
+
+### BBTools
+
+```{bash, eval=FALSE}
+
+```
+
 # Conjunto de datos
 
-Para este `Demo` utilizamos metagenomas de intestino de el estudio "[Gut microbiome composition may be an indicator of preclinical Alzheimer’s disease](https://pmc.ncbi.nlm.nih.gov/articles/PMC10680783/#S8)". Seleccionamos 3 muestras para 2 condiciones distintas, `Sintomas Clínicos de Alzheimer` vs `Control`.
+Para este `Demo` utilizamos metagenomas de intestino de humano del estudio "[Gut microbiome composition may be an indicator of preclinical Alzheimer’s disease](https://pmc.ncbi.nlm.nih.gov/articles/PMC10680783/#S8)". Seleccionamos 3 muestras para 2 condiciones distintas, `Sintomas Clínicos de Alzheimer` vs `Control`.
+
+Aqui están los metadatos asociados a cada muestra:
+
+```{r, echo=FALSE, message=FALSE, warning=FALSE}
+df <- readr::read_csv("tables/SraRunTable.csv")
+df$`Sample Name` <- as.character(df$`Sample Name`)
+
+meta_df <- readxl::read_xlsx("tables/NIHMS1945399-supplement-Data_file_S1_version2.xlsx", sheet = 1) 
+meta_df$Participant <- as.character(meta_df$Participant)
+
+samples <- c("24882", "62710", "63032", "62568", "63218", "63972")
+sb_df <- df[df$`Sample Name` %in% samples, ]
+sb_meta <- meta_df[meta_df$Participant %in% samples, ]
+
+all <- dplyr::left_join(sb_df, sb_meta, by = c(`Sample Name` = "Participant"))
+
+gt::gt(all)
+```

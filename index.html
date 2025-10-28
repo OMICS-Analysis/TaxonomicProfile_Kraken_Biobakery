@@ -93,6 +93,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#otros-softwares" id="toc-otros-softwares" class="nav-link" data-scroll-target="#otros-softwares">Otros softwares:</a>
   <ul class="collapse">
   <li><a href="#sratools" id="toc-sratools" class="nav-link" data-scroll-target="#sratools">SRATools</a></li>
+  <li><a href="#cutadapt" id="toc-cutadapt" class="nav-link" data-scroll-target="#cutadapt">CutAdapt</a></li>
+  <li><a href="#trimmomatic" id="toc-trimmomatic" class="nav-link" data-scroll-target="#trimmomatic">Trimmomatic</a></li>
+  <li><a href="#kneaddata" id="toc-kneaddata" class="nav-link" data-scroll-target="#kneaddata">KneadData</a></li>
+  <li><a href="#bbtools" id="toc-bbtools" class="nav-link" data-scroll-target="#bbtools">BBTools</a></li>
   </ul></li>
   </ul></li>
   <li><a href="#conjunto-de-datos" id="toc-conjunto-de-datos" class="nav-link" data-scroll-target="#conjunto-de-datos">Conjunto de datos</a></li>
@@ -141,6 +145,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#otros-softwares" id="toc-otros-softwares">Otros softwares:</a>
   <ul>
   <li><a href="#sratools" id="toc-sratools">SRATools</a></li>
+  <li><a href="#cutadapt" id="toc-cutadapt">CutAdapt</a></li>
+  <li><a href="#trimmomatic" id="toc-trimmomatic">Trimmomatic</a></li>
+  <li><a href="#kneaddata" id="toc-kneaddata">KneadData</a></li>
+  <li><a href="#bbtools" id="toc-bbtools">BBTools</a></li>
   </ul></li>
   </ul></li>
   <li><a href="#conjunto-de-datos" id="toc-conjunto-de-datos">Conjunto de datos</a></li>
@@ -239,11 +247,1128 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="sourceCode cell-code" id="cb13"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
+<section id="cutadapt" class="level3">
+<h3 class="anchored" data-anchor-id="cutadapt">CutAdapt</h3>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="trimmomatic" class="level3">
+<h3 class="anchored" data-anchor-id="trimmomatic">Trimmomatic</h3>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="kneaddata" class="level3">
+<h3 class="anchored" data-anchor-id="kneaddata">KneadData</h3>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="bbtools" class="level3">
+<h3 class="anchored" data-anchor-id="bbtools">BBTools</h3>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
 </section>
 </section>
 <section id="conjunto-de-datos" class="level1">
 <h1>Conjunto de datos</h1>
-<p>Para este <code>Demo</code> utilizamos metagenomas de intestino de el estudio “<a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC10680783/#S8">Gut microbiome composition may be an indicator of preclinical Alzheimer’s disease</a>”. Seleccionamos 3 muestras para 2 condiciones distintas, <code>Sintomas Clínicos de Alzheimer</code> vs <code>Control</code>.</p>
+<p>Para este <code>Demo</code> utilizamos metagenomas de intestino de humano del estudio “<a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC10680783/#S8">Gut microbiome composition may be an indicator of preclinical Alzheimer’s disease</a>”. Seleccionamos 3 muestras para 2 condiciones distintas, <code>Sintomas Clínicos de Alzheimer</code> vs <code>Control</code>.</p>
+<p>Aqui están los metadatos asociados a cada muestra:</p>
+<div class="cell">
+<div class="cell-output-display">
+<div id="obivltdiba" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#obivltdiba table {
+  font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#obivltdiba thead, #obivltdiba tbody, #obivltdiba tfoot, #obivltdiba tr, #obivltdiba td, #obivltdiba th {
+  border-style: none;
+}
+
+#obivltdiba p {
+  margin: 0;
+  padding: 0;
+}
+
+#obivltdiba .gt_table {
+  display: table;
+  border-collapse: collapse;
+  line-height: normal;
+  margin-left: auto;
+  margin-right: auto;
+  color: #333333;
+  font-size: 16px;
+  font-weight: normal;
+  font-style: normal;
+  background-color: #FFFFFF;
+  width: auto;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #A8A8A8;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #A8A8A8;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+}
+
+#obivltdiba .gt_caption {
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+
+#obivltdiba .gt_title {
+  color: #333333;
+  font-size: 125%;
+  font-weight: initial;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-color: #FFFFFF;
+  border-bottom-width: 0;
+}
+
+#obivltdiba .gt_subtitle {
+  color: #333333;
+  font-size: 85%;
+  font-weight: initial;
+  padding-top: 3px;
+  padding-bottom: 5px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-color: #FFFFFF;
+  border-top-width: 0;
+}
+
+#obivltdiba .gt_heading {
+  background-color: #FFFFFF;
+  text-align: center;
+  border-bottom-color: #FFFFFF;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#obivltdiba .gt_bottom_border {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#obivltdiba .gt_col_headings {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#obivltdiba .gt_col_heading {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 6px;
+  padding-left: 5px;
+  padding-right: 5px;
+  overflow-x: hidden;
+}
+
+#obivltdiba .gt_column_spanner_outer {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+#obivltdiba .gt_column_spanner_outer:first-child {
+  padding-left: 0;
+}
+
+#obivltdiba .gt_column_spanner_outer:last-child {
+  padding-right: 0;
+}
+
+#obivltdiba .gt_column_spanner {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  overflow-x: hidden;
+  display: inline-block;
+  width: 100%;
+}
+
+#obivltdiba .gt_spanner_row {
+  border-bottom-style: hidden;
+}
+
+#obivltdiba .gt_group_heading {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  text-align: left;
+}
+
+#obivltdiba .gt_empty_group_heading {
+  padding: 0.5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: middle;
+}
+
+#obivltdiba .gt_from_md > :first-child {
+  margin-top: 0;
+}
+
+#obivltdiba .gt_from_md > :last-child {
+  margin-bottom: 0;
+}
+
+#obivltdiba .gt_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  margin: 10px;
+  border-top-style: solid;
+  border-top-width: 1px;
+  border-top-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  overflow-x: hidden;
+}
+
+#obivltdiba .gt_stub {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#obivltdiba .gt_stub_row_group {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+  vertical-align: top;
+}
+
+#obivltdiba .gt_row_group_first td {
+  border-top-width: 2px;
+}
+
+#obivltdiba .gt_row_group_first th {
+  border-top-width: 2px;
+}
+
+#obivltdiba .gt_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#obivltdiba .gt_first_summary_row {
+  border-top-style: solid;
+  border-top-color: #D3D3D3;
+}
+
+#obivltdiba .gt_first_summary_row.thick {
+  border-top-width: 2px;
+}
+
+#obivltdiba .gt_last_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#obivltdiba .gt_grand_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#obivltdiba .gt_first_grand_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-style: double;
+  border-top-width: 6px;
+  border-top-color: #D3D3D3;
+}
+
+#obivltdiba .gt_last_grand_summary_row_top {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: double;
+  border-bottom-width: 6px;
+  border-bottom-color: #D3D3D3;
+}
+
+#obivltdiba .gt_striped {
+  background-color: rgba(128, 128, 128, 0.05);
+}
+
+#obivltdiba .gt_table_body {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#obivltdiba .gt_footnotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#obivltdiba .gt_footnote {
+  margin: 0px;
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#obivltdiba .gt_sourcenotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#obivltdiba .gt_sourcenote {
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#obivltdiba .gt_left {
+  text-align: left;
+}
+
+#obivltdiba .gt_center {
+  text-align: center;
+}
+
+#obivltdiba .gt_right {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+#obivltdiba .gt_font_normal {
+  font-weight: normal;
+}
+
+#obivltdiba .gt_font_bold {
+  font-weight: bold;
+}
+
+#obivltdiba .gt_font_italic {
+  font-style: italic;
+}
+
+#obivltdiba .gt_super {
+  font-size: 65%;
+}
+
+#obivltdiba .gt_footnote_marks {
+  font-size: 75%;
+  vertical-align: 0.4em;
+  position: initial;
+}
+
+#obivltdiba .gt_asterisk {
+  font-size: 100%;
+  vertical-align: 0;
+}
+
+#obivltdiba .gt_indent_1 {
+  text-indent: 5px;
+}
+
+#obivltdiba .gt_indent_2 {
+  text-indent: 10px;
+}
+
+#obivltdiba .gt_indent_3 {
+  text-indent: 15px;
+}
+
+#obivltdiba .gt_indent_4 {
+  text-indent: 20px;
+}
+
+#obivltdiba .gt_indent_5 {
+  text-indent: 25px;
+}
+
+#obivltdiba .katex-display {
+  display: inline-flex !important;
+  margin-bottom: 0.75em !important;
+}
+
+#obivltdiba div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+  height: 0px !important;
+}
+</style>
+
+<table class="gt_table caption-top table table-sm table-striped small" data-quarto-postprocess="true" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
+<thead>
+<tr class="gt_col_headings header">
+<th id="Run" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">Run</th>
+<th id="Assay-Type" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">Assay Type</th>
+<th id="AvgSpotLen" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">AvgSpotLen</th>
+<th id="Bases" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">Bases</th>
+<th id="BioProject" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">BioProject</th>
+<th id="BioSample" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">BioSample</th>
+<th id="BioSampleModel" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">BioSampleModel</th>
+<th id="Bytes" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">Bytes</th>
+<th id="Center-Name" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">Center Name</th>
+<th id="Collection_Date" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">Collection_Date</th>
+<th id="Consent" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">Consent</th>
+<th id="DATASTORE-filetype" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">DATASTORE filetype</th>
+<th id="DATASTORE-provider" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">DATASTORE provider</th>
+<th id="DATASTORE-region" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">DATASTORE region</th>
+<th id="Experiment" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">Experiment</th>
+<th id="geo_loc_name_country" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">geo_loc_name_country</th>
+<th id="geo_loc_name_country_continent" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">geo_loc_name_country_continent</th>
+<th id="geo_loc_name" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">geo_loc_name</th>
+<th id="HOST" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">HOST</th>
+<th id="Instrument" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">Instrument</th>
+<th id="isolation_source" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">isolation_source</th>
+<th id="lat_lon" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">lat_lon</th>
+<th id="Library-Name" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">Library Name</th>
+<th id="LibraryLayout" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">LibraryLayout</th>
+<th id="LibrarySelection" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">LibrarySelection</th>
+<th id="LibrarySource" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">LibrarySource</th>
+<th id="Organism" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">Organism</th>
+<th id="Platform" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">Platform</th>
+<th id="ReleaseDate" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">ReleaseDate</th>
+<th id="create_date" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">create_date</th>
+<th id="version" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">version</th>
+<th id="Sample-Name" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">Sample Name</th>
+<th id="SRA-Study" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">SRA Study</th>
+<th id="Age" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">Age</th>
+<th id="Sex" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">Sex</th>
+<th id="Race" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">Race</th>
+<th id="Years-Education" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">Years Education</th>
+<th id="CDR" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">CDR</th>
+<th id="LUMIPULSE_CSF.ab42.ab40.ratio" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">LUMIPULSE_CSF.ab42.ab40.ratio</th>
+<th id="LUMIPULSE_CSF_tTau" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">LUMIPULSE_CSF_tTau</th>
+<th id="LUMIPULSE_CSF_pTau" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">LUMIPULSE_CSF_pTau</th>
+<th id="Days.SincePETpib" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">Days.SincePETpib</th>
+<th id="pib_fsuvr_rsf_tot_cortmean" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">pib_fsuvr_rsf_tot_cortmean</th>
+<th id="Centiloid.PiB" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">Centiloid.PiB</th>
+<th id="Days.SincePETav45" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">Days.SincePETav45</th>
+<th id="av45_fsuvr_rsf_tot_cortmean" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">av45_fsuvr_rsf_tot_cortmean</th>
+<th id="Centiloid.AV45" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">Centiloid.AV45</th>
+<th id="Tracer2Use" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">Tracer2Use</th>
+<th id="combined.Centiloid" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">combined.Centiloid</th>
+<th id="amyloid.positive.AF" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">amyloid.positive.AF</th>
+<th id="Tauopathy" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">Tauopathy</th>
+<th id="tau.positive.AF" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">tau.positive.AF</th>
+<th id="CortSig_Thickness" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">CortSig_Thickness</th>
+<th id="MR_LV_RV_HIPPOCAMPUS" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">MR_LV_RV_HIPPOCAMPUS</th>
+<th id="WMH_volume" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">WMH_volume</th>
+<th id="APOE" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">APOE</th>
+<th id="APOE4.status" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">APOE4.status</th>
+<th id="Polygenic-Risk-Score" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">Polygenic Risk Score</th>
+<th id="INT_PET" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">INT_PET</th>
+<th id="INT_CSF" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">INT_CSF</th>
+<th id="INT_MRI" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">INT_MRI</th>
+<th id="INT_CDR" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">INT_CDR</th>
+<th id="Interval_Measure_Amyloid" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col">Interval_Measure_Amyloid</th>
+<th id="Interval_Days_Amyloid" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">Interval_Days_Amyloid</th>
+<th id="WEIGHT.lb" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">WEIGHT.lb</th>
+<th id="HEIGHT.in" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">HEIGHT.in</th>
+<th id="BMI" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">BMI</th>
+<th id="Cancer" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">Cancer</th>
+<th id="Active.Depression" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">Active.Depression</th>
+<th id="Hypercholesterolemia" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">Hypercholesterolemia</th>
+<th id="Hypertension" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">Hypertension</th>
+<th id="Diabetes" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">Diabetes</th>
+<th id="Liver.Disease" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">Liver.Disease</th>
+<th id="Alcohol.Abuse" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">Alcohol.Abuse</th>
+<th id="Tobacco.Use.PastOrPresent" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">Tobacco.Use.PastOrPresent</th>
+<th id="Autoimmune.Disorder" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">Autoimmune.Disorder</th>
+<th id="Thyroid.Disease" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">Thyroid.Disease</th>
+<th id="Cardiovascular.Disease" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">Cardiovascular.Disease</th>
+<th id="Reads" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">Reads</th>
+<th id="Richness" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">Richness</th>
+<th id="Shannon" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">Shannon</th>
+<th id="Tax.PCoA1" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">Tax.PCoA1</th>
+<th id="Tax.PCoA2" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">Tax.PCoA2</th>
+<th id="FBratio" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">FBratio</th>
+<th id="Fnl.Richness" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">Fnl.Richness</th>
+<th id="Fnl.Shannon" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">Fnl.Shannon</th>
+<th id="Fnl.PCoA1" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">Fnl.PCoA1</th>
+<th id="Fnl.PCoA2" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col">Fnl.PCoA2</th>
+</tr>
+</thead>
+<tbody class="gt_table_body">
+<tr class="odd">
+<td class="gt_row gt_left" headers="Run">SRR17648356</td>
+<td class="gt_row gt_left" headers="Assay Type">WGS</td>
+<td class="gt_row gt_right" headers="AvgSpotLen">265</td>
+<td class="gt_row gt_right" headers="Bases">3109979798</td>
+<td class="gt_row gt_left" headers="BioProject">PRJNA798058</td>
+<td class="gt_row gt_left" headers="BioSample">SAMN25046602</td>
+<td class="gt_row gt_left" headers="BioSampleModel">Metagenome or environmental</td>
+<td class="gt_row gt_right" headers="Bytes">1117200807</td>
+<td class="gt_row gt_left" headers="Center Name">WASHINGTON UNIVERSITY IN ST. LOUIS</td>
+<td class="gt_row gt_right" headers="Collection_Date">2020</td>
+<td class="gt_row gt_left" headers="Consent">public</td>
+<td class="gt_row gt_left" headers="DATASTORE filetype">fastq,run.zq,sra</td>
+<td class="gt_row gt_left" headers="DATASTORE provider">gs,ncbi,s3</td>
+<td class="gt_row gt_left" headers="DATASTORE region">gs.us-east1,ncbi.public,s3.us-east-1</td>
+<td class="gt_row gt_left" headers="Experiment">SRX13816701</td>
+<td class="gt_row gt_left" headers="geo_loc_name_country">USA</td>
+<td class="gt_row gt_left" headers="geo_loc_name_country_continent">North America</td>
+<td class="gt_row gt_left" headers="geo_loc_name">USA: St. Louis</td>
+<td class="gt_row gt_left" headers="HOST">Homo sapiens</td>
+<td class="gt_row gt_left" headers="Instrument">Illumina NovaSeq 6000</td>
+<td class="gt_row gt_left" headers="isolation_source">Stool 10</td>
+<td class="gt_row gt_left" headers="lat_lon">38.6270 N 90.1994 W</td>
+<td class="gt_row gt_left" headers="Library Name">Stool 10</td>
+<td class="gt_row gt_left" headers="LibraryLayout">PAIRED</td>
+<td class="gt_row gt_left" headers="LibrarySelection">RANDOM</td>
+<td class="gt_row gt_left" headers="LibrarySource">METAGENOMIC</td>
+<td class="gt_row gt_left" headers="Organism">human gut metagenome</td>
+<td class="gt_row gt_left" headers="Platform">ILLUMINA</td>
+<td class="gt_row gt_right" headers="ReleaseDate">2022-05-01</td>
+<td class="gt_row gt_right" headers="create_date">2022-01-17 19:22:00</td>
+<td class="gt_row gt_right" headers="version">1</td>
+<td class="gt_row gt_right" headers="Sample Name">62710</td>
+<td class="gt_row gt_left" headers="SRA Study">SRP355475</td>
+<td class="gt_row gt_right" headers="Age">79.84384</td>
+<td class="gt_row gt_right" headers="Sex">2</td>
+<td class="gt_row gt_right" headers="Race">5</td>
+<td class="gt_row gt_right" headers="Years Education">16</td>
+<td class="gt_row gt_right" headers="CDR">0</td>
+<td class="gt_row gt_left" headers="LUMIPULSE_CSF.ab42.ab40.ratio">3.2471436999999999E-2</td>
+<td class="gt_row gt_right" headers="LUMIPULSE_CSF_tTau">815</td>
+<td class="gt_row gt_right" headers="LUMIPULSE_CSF_pTau">132.9</td>
+<td class="gt_row gt_left" headers="Days.SincePETpib">1206</td>
+<td class="gt_row gt_left" headers="pib_fsuvr_rsf_tot_cortmean">2.86</td>
+<td class="gt_row gt_left" headers="Centiloid.PiB">81.2</td>
+<td class="gt_row gt_left" headers="Days.SincePETav45">2632</td>
+<td class="gt_row gt_left" headers="av45_fsuvr_rsf_tot_cortmean">1.909</td>
+<td class="gt_row gt_left" headers="Centiloid.AV45">59.122399999999999</td>
+<td class="gt_row gt_left" headers="Tracer2Use">PiB</td>
+<td class="gt_row gt_right" headers="combined.Centiloid">81.2</td>
+<td class="gt_row gt_right" headers="amyloid.positive.AF">1</td>
+<td class="gt_row gt_left" headers="Tauopathy">1.3182499999999999</td>
+<td class="gt_row gt_right" headers="tau.positive.AF">1</td>
+<td class="gt_row gt_right" headers="CortSig_Thickness">2.4857915290000001</td>
+<td class="gt_row gt_right" headers="MR_LV_RV_HIPPOCAMPUS">6178.1</td>
+<td class="gt_row gt_right" headers="WMH_volume">10644.05566</td>
+<td class="gt_row gt_right" headers="APOE">34</td>
+<td class="gt_row gt_left" headers="APOE4.status">e4+</td>
+<td class="gt_row gt_left" headers="Polygenic Risk Score">-2.9074700000000001E-3</td>
+<td class="gt_row gt_right" headers="INT_PET">367</td>
+<td class="gt_row gt_right" headers="INT_CSF">465</td>
+<td class="gt_row gt_right" headers="INT_MRI">367</td>
+<td class="gt_row gt_right" headers="INT_CDR">120</td>
+<td class="gt_row gt_left" headers="Interval_Measure_Amyloid">INT_PET</td>
+<td class="gt_row gt_right" headers="Interval_Days_Amyloid">367</td>
+<td class="gt_row gt_right" headers="WEIGHT.lb">134.00000</td>
+<td class="gt_row gt_right" headers="HEIGHT.in">64.30</td>
+<td class="gt_row gt_right" headers="BMI">22.78669</td>
+<td class="gt_row gt_right" headers="Cancer">0</td>
+<td class="gt_row gt_right" headers="Active.Depression">0</td>
+<td class="gt_row gt_right" headers="Hypercholesterolemia">1</td>
+<td class="gt_row gt_right" headers="Hypertension">0</td>
+<td class="gt_row gt_right" headers="Diabetes">0</td>
+<td class="gt_row gt_right" headers="Liver.Disease">0</td>
+<td class="gt_row gt_right" headers="Alcohol.Abuse">0</td>
+<td class="gt_row gt_right" headers="Tobacco.Use.PastOrPresent">0</td>
+<td class="gt_row gt_right" headers="Autoimmune.Disorder">0</td>
+<td class="gt_row gt_right" headers="Thyroid.Disease">1</td>
+<td class="gt_row gt_right" headers="Cardiovascular.Disease">0</td>
+<td class="gt_row gt_right" headers="Reads">11712243</td>
+<td class="gt_row gt_right" headers="Richness">93</td>
+<td class="gt_row gt_right" headers="Shannon">3.510324</td>
+<td class="gt_row gt_right" headers="Tax.PCoA1">0.198843509</td>
+<td class="gt_row gt_right" headers="Tax.PCoA2">-0.01375146</td>
+<td class="gt_row gt_right" headers="FBratio">4.5375031197984699</td>
+<td class="gt_row gt_right" headers="Fnl.Richness">290</td>
+<td class="gt_row gt_right" headers="Fnl.Shannon">5.078149</td>
+<td class="gt_row gt_right" headers="Fnl.PCoA1">-0.024034290</td>
+<td class="gt_row gt_right" headers="Fnl.PCoA2">0.043918188</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="Run">SRR17648378</td>
+<td class="gt_row gt_left" headers="Assay Type">WGS</td>
+<td class="gt_row gt_right" headers="AvgSpotLen">239</td>
+<td class="gt_row gt_right" headers="Bases">4022515981</td>
+<td class="gt_row gt_left" headers="BioProject">PRJNA798058</td>
+<td class="gt_row gt_left" headers="BioSample">SAMN25046600</td>
+<td class="gt_row gt_left" headers="BioSampleModel">Metagenome or environmental</td>
+<td class="gt_row gt_right" headers="Bytes">1390650146</td>
+<td class="gt_row gt_left" headers="Center Name">WASHINGTON UNIVERSITY IN ST. LOUIS</td>
+<td class="gt_row gt_right" headers="Collection_Date">2020</td>
+<td class="gt_row gt_left" headers="Consent">public</td>
+<td class="gt_row gt_left" headers="DATASTORE filetype">fastq,run.zq,sra</td>
+<td class="gt_row gt_left" headers="DATASTORE provider">gs,ncbi,s3</td>
+<td class="gt_row gt_left" headers="DATASTORE region">gs.us-east1,ncbi.public,s3.us-east-1</td>
+<td class="gt_row gt_left" headers="Experiment">SRX13816679</td>
+<td class="gt_row gt_left" headers="geo_loc_name_country">USA</td>
+<td class="gt_row gt_left" headers="geo_loc_name_country_continent">North America</td>
+<td class="gt_row gt_left" headers="geo_loc_name">USA: St. Louis</td>
+<td class="gt_row gt_left" headers="HOST">Homo sapiens</td>
+<td class="gt_row gt_left" headers="Instrument">Illumina NovaSeq 6000</td>
+<td class="gt_row gt_left" headers="isolation_source">Stool 8</td>
+<td class="gt_row gt_left" headers="lat_lon">38.6270 N 90.1994 W</td>
+<td class="gt_row gt_left" headers="Library Name">Stool 8</td>
+<td class="gt_row gt_left" headers="LibraryLayout">PAIRED</td>
+<td class="gt_row gt_left" headers="LibrarySelection">RANDOM</td>
+<td class="gt_row gt_left" headers="LibrarySource">METAGENOMIC</td>
+<td class="gt_row gt_left" headers="Organism">human gut metagenome</td>
+<td class="gt_row gt_left" headers="Platform">ILLUMINA</td>
+<td class="gt_row gt_right" headers="ReleaseDate">2022-05-01</td>
+<td class="gt_row gt_right" headers="create_date">2022-01-17 19:23:00</td>
+<td class="gt_row gt_right" headers="version">1</td>
+<td class="gt_row gt_right" headers="Sample Name">62568</td>
+<td class="gt_row gt_left" headers="SRA Study">SRP355475</td>
+<td class="gt_row gt_right" headers="Age">85.70137</td>
+<td class="gt_row gt_right" headers="Sex">2</td>
+<td class="gt_row gt_right" headers="Race">4</td>
+<td class="gt_row gt_right" headers="Years Education">18</td>
+<td class="gt_row gt_right" headers="CDR">0</td>
+<td class="gt_row gt_left" headers="LUMIPULSE_CSF.ab42.ab40.ratio">8.7997142E-2</td>
+<td class="gt_row gt_right" headers="LUMIPULSE_CSF_tTau">209</td>
+<td class="gt_row gt_right" headers="LUMIPULSE_CSF_pTau">29.2</td>
+<td class="gt_row gt_left" headers="Days.SincePETpib">NA</td>
+<td class="gt_row gt_left" headers="pib_fsuvr_rsf_tot_cortmean">NA</td>
+<td class="gt_row gt_left" headers="Centiloid.PiB">NA</td>
+<td class="gt_row gt_left" headers="Days.SincePETav45">2331</td>
+<td class="gt_row gt_left" headers="av45_fsuvr_rsf_tot_cortmean">0.93899999999999995</td>
+<td class="gt_row gt_left" headers="Centiloid.AV45">7.1303999999999901</td>
+<td class="gt_row gt_left" headers="Tracer2Use">AV45</td>
+<td class="gt_row gt_right" headers="combined.Centiloid">7.1303999999999901</td>
+<td class="gt_row gt_right" headers="amyloid.positive.AF">0</td>
+<td class="gt_row gt_left" headers="Tauopathy">NA</td>
+<td class="gt_row gt_right" headers="tau.positive.AF">0</td>
+<td class="gt_row gt_right" headers="CortSig_Thickness">2.1889635489999999</td>
+<td class="gt_row gt_right" headers="MR_LV_RV_HIPPOCAMPUS">6921.4</td>
+<td class="gt_row gt_right" headers="WMH_volume">36641.46875</td>
+<td class="gt_row gt_right" headers="APOE">24</td>
+<td class="gt_row gt_left" headers="APOE4.status">e4+</td>
+<td class="gt_row gt_left" headers="Polygenic Risk Score">-1.3089699999999999E-2</td>
+<td class="gt_row gt_right" headers="INT_PET">1516</td>
+<td class="gt_row gt_right" headers="INT_CSF">192</td>
+<td class="gt_row gt_right" headers="INT_MRI">709</td>
+<td class="gt_row gt_right" headers="INT_CDR">202</td>
+<td class="gt_row gt_left" headers="Interval_Measure_Amyloid">INT_PET</td>
+<td class="gt_row gt_right" headers="Interval_Days_Amyloid">1516</td>
+<td class="gt_row gt_right" headers="WEIGHT.lb">173.00000</td>
+<td class="gt_row gt_right" headers="HEIGHT.in">63.00</td>
+<td class="gt_row gt_right" headers="BMI">30.64526</td>
+<td class="gt_row gt_right" headers="Cancer">0</td>
+<td class="gt_row gt_right" headers="Active.Depression">0</td>
+<td class="gt_row gt_right" headers="Hypercholesterolemia">1</td>
+<td class="gt_row gt_right" headers="Hypertension">1</td>
+<td class="gt_row gt_right" headers="Diabetes">0</td>
+<td class="gt_row gt_right" headers="Liver.Disease">0</td>
+<td class="gt_row gt_right" headers="Alcohol.Abuse">0</td>
+<td class="gt_row gt_right" headers="Tobacco.Use.PastOrPresent">0</td>
+<td class="gt_row gt_right" headers="Autoimmune.Disorder">0</td>
+<td class="gt_row gt_right" headers="Thyroid.Disease">1</td>
+<td class="gt_row gt_right" headers="Cardiovascular.Disease">0</td>
+<td class="gt_row gt_right" headers="Reads">16772435</td>
+<td class="gt_row gt_right" headers="Richness">101</td>
+<td class="gt_row gt_right" headers="Shannon">2.805364</td>
+<td class="gt_row gt_right" headers="Tax.PCoA1">0.005836659</td>
+<td class="gt_row gt_right" headers="Tax.PCoA2">-0.15794836</td>
+<td class="gt_row gt_right" headers="FBratio">0.89536350174081303</td>
+<td class="gt_row gt_right" headers="Fnl.Richness">307</td>
+<td class="gt_row gt_right" headers="Fnl.Shannon">5.224984</td>
+<td class="gt_row gt_right" headers="Fnl.PCoA1">-0.012065332</td>
+<td class="gt_row gt_right" headers="Fnl.PCoA2">0.016554060</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="Run">SRR17648422</td>
+<td class="gt_row gt_left" headers="Assay Type">WGS</td>
+<td class="gt_row gt_right" headers="AvgSpotLen">269</td>
+<td class="gt_row gt_right" headers="Bases">8818396225</td>
+<td class="gt_row gt_left" headers="BioProject">PRJNA798058</td>
+<td class="gt_row gt_left" headers="BioSample">SAMN25046596</td>
+<td class="gt_row gt_left" headers="BioSampleModel">Metagenome or environmental</td>
+<td class="gt_row gt_right" headers="Bytes">3467555540</td>
+<td class="gt_row gt_left" headers="Center Name">WASHINGTON UNIVERSITY IN ST. LOUIS</td>
+<td class="gt_row gt_right" headers="Collection_Date">2020</td>
+<td class="gt_row gt_left" headers="Consent">public</td>
+<td class="gt_row gt_left" headers="DATASTORE filetype">fastq,run.zq,sra</td>
+<td class="gt_row gt_left" headers="DATASTORE provider">gs,ncbi,s3</td>
+<td class="gt_row gt_left" headers="DATASTORE region">gs.us-east1,ncbi.public,s3.us-east-1</td>
+<td class="gt_row gt_left" headers="Experiment">SRX13816635</td>
+<td class="gt_row gt_left" headers="geo_loc_name_country">USA</td>
+<td class="gt_row gt_left" headers="geo_loc_name_country_continent">North America</td>
+<td class="gt_row gt_left" headers="geo_loc_name">USA: St. Louis</td>
+<td class="gt_row gt_left" headers="HOST">Homo sapiens</td>
+<td class="gt_row gt_left" headers="Instrument">Illumina NovaSeq 6000</td>
+<td class="gt_row gt_left" headers="isolation_source">Stool 4</td>
+<td class="gt_row gt_left" headers="lat_lon">38.6270 N 90.1994 W</td>
+<td class="gt_row gt_left" headers="Library Name">Stool 4</td>
+<td class="gt_row gt_left" headers="LibraryLayout">PAIRED</td>
+<td class="gt_row gt_left" headers="LibrarySelection">RANDOM</td>
+<td class="gt_row gt_left" headers="LibrarySource">METAGENOMIC</td>
+<td class="gt_row gt_left" headers="Organism">human gut metagenome</td>
+<td class="gt_row gt_left" headers="Platform">ILLUMINA</td>
+<td class="gt_row gt_right" headers="ReleaseDate">2022-05-01</td>
+<td class="gt_row gt_right" headers="create_date">2022-01-17 19:47:00</td>
+<td class="gt_row gt_right" headers="version">1</td>
+<td class="gt_row gt_right" headers="Sample Name">24882</td>
+<td class="gt_row gt_left" headers="SRA Study">SRP355475</td>
+<td class="gt_row gt_right" headers="Age">80.94795</td>
+<td class="gt_row gt_right" headers="Sex">2</td>
+<td class="gt_row gt_right" headers="Race">5</td>
+<td class="gt_row gt_right" headers="Years Education">18</td>
+<td class="gt_row gt_right" headers="CDR">0</td>
+<td class="gt_row gt_left" headers="LUMIPULSE_CSF.ab42.ab40.ratio">6.7300982999999995E-2</td>
+<td class="gt_row gt_right" headers="LUMIPULSE_CSF_tTau">396</td>
+<td class="gt_row gt_right" headers="LUMIPULSE_CSF_pTau">49.3</td>
+<td class="gt_row gt_left" headers="Days.SincePETpib">NA</td>
+<td class="gt_row gt_left" headers="pib_fsuvr_rsf_tot_cortmean">NA</td>
+<td class="gt_row gt_left" headers="Centiloid.PiB">NA</td>
+<td class="gt_row gt_left" headers="Days.SincePETav45">1436</td>
+<td class="gt_row gt_left" headers="av45_fsuvr_rsf_tot_cortmean">1.4510000000000001</td>
+<td class="gt_row gt_left" headers="Centiloid.AV45">34.573599999999999</td>
+<td class="gt_row gt_left" headers="Tracer2Use">AV45</td>
+<td class="gt_row gt_right" headers="combined.Centiloid">34.573599999999999</td>
+<td class="gt_row gt_right" headers="amyloid.positive.AF">1</td>
+<td class="gt_row gt_left" headers="Tauopathy">1.47525</td>
+<td class="gt_row gt_right" headers="tau.positive.AF">1</td>
+<td class="gt_row gt_right" headers="CortSig_Thickness">2.482779727</td>
+<td class="gt_row gt_right" headers="MR_LV_RV_HIPPOCAMPUS">6882.2</td>
+<td class="gt_row gt_right" headers="WMH_volume">8009.0634769999997</td>
+<td class="gt_row gt_right" headers="APOE">33</td>
+<td class="gt_row gt_left" headers="APOE4.status">e4-</td>
+<td class="gt_row gt_left" headers="Polygenic Risk Score">-4.3158299999999997E-3</td>
+<td class="gt_row gt_right" headers="INT_PET">624</td>
+<td class="gt_row gt_right" headers="INT_CSF">2268</td>
+<td class="gt_row gt_right" headers="INT_MRI">624</td>
+<td class="gt_row gt_right" headers="INT_CDR">93</td>
+<td class="gt_row gt_left" headers="Interval_Measure_Amyloid">INT_PET</td>
+<td class="gt_row gt_right" headers="Interval_Days_Amyloid">624</td>
+<td class="gt_row gt_right" headers="WEIGHT.lb">97.39996</td>
+<td class="gt_row gt_right" headers="HEIGHT.in">59.25</td>
+<td class="gt_row gt_right" headers="BMI">19.50655</td>
+<td class="gt_row gt_right" headers="Cancer">0</td>
+<td class="gt_row gt_right" headers="Active.Depression">1</td>
+<td class="gt_row gt_right" headers="Hypercholesterolemia">0</td>
+<td class="gt_row gt_right" headers="Hypertension">1</td>
+<td class="gt_row gt_right" headers="Diabetes">0</td>
+<td class="gt_row gt_right" headers="Liver.Disease">0</td>
+<td class="gt_row gt_right" headers="Alcohol.Abuse">0</td>
+<td class="gt_row gt_right" headers="Tobacco.Use.PastOrPresent">0</td>
+<td class="gt_row gt_right" headers="Autoimmune.Disorder">0</td>
+<td class="gt_row gt_right" headers="Thyroid.Disease">0</td>
+<td class="gt_row gt_right" headers="Cardiovascular.Disease">0</td>
+<td class="gt_row gt_right" headers="Reads">32742673</td>
+<td class="gt_row gt_right" headers="Richness">106</td>
+<td class="gt_row gt_right" headers="Shannon">2.927976</td>
+<td class="gt_row gt_right" headers="Tax.PCoA1">-0.095154022</td>
+<td class="gt_row gt_right" headers="Tax.PCoA2">0.07741636</td>
+<td class="gt_row gt_right" headers="FBratio">22.875371196652299</td>
+<td class="gt_row gt_right" headers="Fnl.Richness">305</td>
+<td class="gt_row gt_right" headers="Fnl.Shannon">4.967638</td>
+<td class="gt_row gt_right" headers="Fnl.PCoA1">0.001006753</td>
+<td class="gt_row gt_right" headers="Fnl.PCoA2">-0.017336432</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="Run">SRR17648430</td>
+<td class="gt_row gt_left" headers="Assay Type">WGS</td>
+<td class="gt_row gt_right" headers="AvgSpotLen">253</td>
+<td class="gt_row gt_right" headers="Bases">12010606930</td>
+<td class="gt_row gt_left" headers="BioProject">PRJNA798058</td>
+<td class="gt_row gt_left" headers="BioSample">SAMN25046615</td>
+<td class="gt_row gt_left" headers="BioSampleModel">Metagenome or environmental</td>
+<td class="gt_row gt_right" headers="Bytes">4322857319</td>
+<td class="gt_row gt_left" headers="Center Name">WASHINGTON UNIVERSITY IN ST. LOUIS</td>
+<td class="gt_row gt_right" headers="Collection_Date">2020</td>
+<td class="gt_row gt_left" headers="Consent">public</td>
+<td class="gt_row gt_left" headers="DATASTORE filetype">fastq,run.zq,sra</td>
+<td class="gt_row gt_left" headers="DATASTORE provider">gs,ncbi,s3</td>
+<td class="gt_row gt_left" headers="DATASTORE region">gs.us-east1,ncbi.public,s3.us-east-1</td>
+<td class="gt_row gt_left" headers="Experiment">SRX13816627</td>
+<td class="gt_row gt_left" headers="geo_loc_name_country">USA</td>
+<td class="gt_row gt_left" headers="geo_loc_name_country_continent">North America</td>
+<td class="gt_row gt_left" headers="geo_loc_name">USA: St. Louis</td>
+<td class="gt_row gt_left" headers="HOST">Homo sapiens</td>
+<td class="gt_row gt_left" headers="Instrument">Illumina NovaSeq 6000</td>
+<td class="gt_row gt_left" headers="isolation_source">Stool 23</td>
+<td class="gt_row gt_left" headers="lat_lon">38.6270 N 90.1994 W</td>
+<td class="gt_row gt_left" headers="Library Name">Stool 23</td>
+<td class="gt_row gt_left" headers="LibraryLayout">PAIRED</td>
+<td class="gt_row gt_left" headers="LibrarySelection">RANDOM</td>
+<td class="gt_row gt_left" headers="LibrarySource">METAGENOMIC</td>
+<td class="gt_row gt_left" headers="Organism">human gut metagenome</td>
+<td class="gt_row gt_left" headers="Platform">ILLUMINA</td>
+<td class="gt_row gt_right" headers="ReleaseDate">2022-05-01</td>
+<td class="gt_row gt_right" headers="create_date">2022-01-17 20:37:00</td>
+<td class="gt_row gt_right" headers="version">1</td>
+<td class="gt_row gt_right" headers="Sample Name">63972</td>
+<td class="gt_row gt_left" headers="SRA Study">SRP355475</td>
+<td class="gt_row gt_right" headers="Age">84.15616</td>
+<td class="gt_row gt_right" headers="Sex">2</td>
+<td class="gt_row gt_right" headers="Race">5</td>
+<td class="gt_row gt_right" headers="Years Education">12</td>
+<td class="gt_row gt_right" headers="CDR">0</td>
+<td class="gt_row gt_left" headers="LUMIPULSE_CSF.ab42.ab40.ratio">7.0503435000000003E-2</td>
+<td class="gt_row gt_right" headers="LUMIPULSE_CSF_tTau">207</td>
+<td class="gt_row gt_right" headers="LUMIPULSE_CSF_pTau">29.9</td>
+<td class="gt_row gt_left" headers="Days.SincePETpib">2395</td>
+<td class="gt_row gt_left" headers="pib_fsuvr_rsf_tot_cortmean">1.1160000000000001</td>
+<td class="gt_row gt_left" headers="Centiloid.PiB">2.72000000000001</td>
+<td class="gt_row gt_left" headers="Days.SincePETav45">3394</td>
+<td class="gt_row gt_left" headers="av45_fsuvr_rsf_tot_cortmean">0.81799999999999995</td>
+<td class="gt_row gt_left" headers="Centiloid.AV45">0.64479999999999604</td>
+<td class="gt_row gt_left" headers="Tracer2Use">PiB</td>
+<td class="gt_row gt_right" headers="combined.Centiloid">2.72000000000001</td>
+<td class="gt_row gt_right" headers="amyloid.positive.AF">0</td>
+<td class="gt_row gt_left" headers="Tauopathy">NA</td>
+<td class="gt_row gt_right" headers="tau.positive.AF">0</td>
+<td class="gt_row gt_right" headers="CortSig_Thickness">2.5124870590000001</td>
+<td class="gt_row gt_right" headers="MR_LV_RV_HIPPOCAMPUS">7789.5</td>
+<td class="gt_row gt_right" headers="WMH_volume">17119.011719999999</td>
+<td class="gt_row gt_right" headers="APOE">33</td>
+<td class="gt_row gt_left" headers="APOE4.status">e4-</td>
+<td class="gt_row gt_left" headers="Polygenic Risk Score">6.5859500000000001E-3</td>
+<td class="gt_row gt_right" headers="INT_PET">1550</td>
+<td class="gt_row gt_right" headers="INT_CSF">1600</td>
+<td class="gt_row gt_right" headers="INT_MRI">1550</td>
+<td class="gt_row gt_right" headers="INT_CDR">136</td>
+<td class="gt_row gt_left" headers="Interval_Measure_Amyloid">INT_PET</td>
+<td class="gt_row gt_right" headers="Interval_Days_Amyloid">1550</td>
+<td class="gt_row gt_right" headers="WEIGHT.lb">190.19995</td>
+<td class="gt_row gt_right" headers="HEIGHT.in">61.00</td>
+<td class="gt_row gt_right" headers="BMI">35.93760</td>
+<td class="gt_row gt_right" headers="Cancer">0</td>
+<td class="gt_row gt_right" headers="Active.Depression">0</td>
+<td class="gt_row gt_right" headers="Hypercholesterolemia">1</td>
+<td class="gt_row gt_right" headers="Hypertension">0</td>
+<td class="gt_row gt_right" headers="Diabetes">0</td>
+<td class="gt_row gt_right" headers="Liver.Disease">0</td>
+<td class="gt_row gt_right" headers="Alcohol.Abuse">0</td>
+<td class="gt_row gt_right" headers="Tobacco.Use.PastOrPresent">0</td>
+<td class="gt_row gt_right" headers="Autoimmune.Disorder">0</td>
+<td class="gt_row gt_right" headers="Thyroid.Disease">0</td>
+<td class="gt_row gt_right" headers="Cardiovascular.Disease">0</td>
+<td class="gt_row gt_right" headers="Reads">47370690</td>
+<td class="gt_row gt_right" headers="Richness">85</td>
+<td class="gt_row gt_right" headers="Shannon">2.692747</td>
+<td class="gt_row gt_right" headers="Tax.PCoA1">-0.255345342</td>
+<td class="gt_row gt_right" headers="Tax.PCoA2">0.09336676</td>
+<td class="gt_row gt_right" headers="FBratio">3.5741204033301899</td>
+<td class="gt_row gt_right" headers="Fnl.Richness">372</td>
+<td class="gt_row gt_right" headers="Fnl.Shannon">5.246997</td>
+<td class="gt_row gt_right" headers="Fnl.PCoA1">0.040150303</td>
+<td class="gt_row gt_right" headers="Fnl.PCoA2">-0.009455487</td>
+</tr>
+<tr class="odd">
+<td class="gt_row gt_left" headers="Run">SRR17648436</td>
+<td class="gt_row gt_left" headers="Assay Type">WGS</td>
+<td class="gt_row gt_right" headers="AvgSpotLen">243</td>
+<td class="gt_row gt_right" headers="Bases">2727496965</td>
+<td class="gt_row gt_left" headers="BioProject">PRJNA798058</td>
+<td class="gt_row gt_left" headers="BioSample">SAMN25046610</td>
+<td class="gt_row gt_left" headers="BioSampleModel">Metagenome or environmental</td>
+<td class="gt_row gt_right" headers="Bytes">1004843427</td>
+<td class="gt_row gt_left" headers="Center Name">WASHINGTON UNIVERSITY IN ST. LOUIS</td>
+<td class="gt_row gt_right" headers="Collection_Date">2020</td>
+<td class="gt_row gt_left" headers="Consent">public</td>
+<td class="gt_row gt_left" headers="DATASTORE filetype">fastq,run.zq,sra</td>
+<td class="gt_row gt_left" headers="DATASTORE provider">gs,ncbi,s3</td>
+<td class="gt_row gt_left" headers="DATASTORE region">gs.us-east1,ncbi.public,s3.us-east-1</td>
+<td class="gt_row gt_left" headers="Experiment">SRX13816621</td>
+<td class="gt_row gt_left" headers="geo_loc_name_country">USA</td>
+<td class="gt_row gt_left" headers="geo_loc_name_country_continent">North America</td>
+<td class="gt_row gt_left" headers="geo_loc_name">USA: St. Louis</td>
+<td class="gt_row gt_left" headers="HOST">Homo sapiens</td>
+<td class="gt_row gt_left" headers="Instrument">Illumina NovaSeq 6000</td>
+<td class="gt_row gt_left" headers="isolation_source">Stool 18</td>
+<td class="gt_row gt_left" headers="lat_lon">38.6270 N 90.1994 W</td>
+<td class="gt_row gt_left" headers="Library Name">Stool 18</td>
+<td class="gt_row gt_left" headers="LibraryLayout">PAIRED</td>
+<td class="gt_row gt_left" headers="LibrarySelection">RANDOM</td>
+<td class="gt_row gt_left" headers="LibrarySource">METAGENOMIC</td>
+<td class="gt_row gt_left" headers="Organism">human gut metagenome</td>
+<td class="gt_row gt_left" headers="Platform">ILLUMINA</td>
+<td class="gt_row gt_right" headers="ReleaseDate">2022-05-01</td>
+<td class="gt_row gt_right" headers="create_date">2022-01-17 19:29:00</td>
+<td class="gt_row gt_right" headers="version">1</td>
+<td class="gt_row gt_right" headers="Sample Name">63218</td>
+<td class="gt_row gt_left" headers="SRA Study">SRP355475</td>
+<td class="gt_row gt_right" headers="Age">88.30411</td>
+<td class="gt_row gt_right" headers="Sex">2</td>
+<td class="gt_row gt_right" headers="Race">5</td>
+<td class="gt_row gt_right" headers="Years Education">14</td>
+<td class="gt_row gt_right" headers="CDR">0</td>
+<td class="gt_row gt_left" headers="LUMIPULSE_CSF.ab42.ab40.ratio">9.1481640000000003E-2</td>
+<td class="gt_row gt_right" headers="LUMIPULSE_CSF_tTau">204</td>
+<td class="gt_row gt_right" headers="LUMIPULSE_CSF_pTau">29.3</td>
+<td class="gt_row gt_left" headers="Days.SincePETpib">3338</td>
+<td class="gt_row gt_left" headers="pib_fsuvr_rsf_tot_cortmean">1.01</td>
+<td class="gt_row gt_left" headers="Centiloid.PiB">-2.0499999999999998</td>
+<td class="gt_row gt_left" headers="Days.SincePETav45">NA</td>
+<td class="gt_row gt_left" headers="av45_fsuvr_rsf_tot_cortmean">NA</td>
+<td class="gt_row gt_left" headers="Centiloid.AV45">NA</td>
+<td class="gt_row gt_left" headers="Tracer2Use">PiB</td>
+<td class="gt_row gt_right" headers="combined.Centiloid">-2.0499999999999998</td>
+<td class="gt_row gt_right" headers="amyloid.positive.AF">0</td>
+<td class="gt_row gt_left" headers="Tauopathy">NA</td>
+<td class="gt_row gt_right" headers="tau.positive.AF">0</td>
+<td class="gt_row gt_right" headers="CortSig_Thickness">2.5991206619999998</td>
+<td class="gt_row gt_right" headers="MR_LV_RV_HIPPOCAMPUS">6997.9</td>
+<td class="gt_row gt_right" headers="WMH_volume">21365.375</td>
+<td class="gt_row gt_right" headers="APOE">23</td>
+<td class="gt_row gt_left" headers="APOE4.status">e4-</td>
+<td class="gt_row gt_left" headers="Polygenic Risk Score">-1.5953700000000001E-2</td>
+<td class="gt_row gt_right" headers="INT_PET">2567</td>
+<td class="gt_row gt_right" headers="INT_CSF">1609</td>
+<td class="gt_row gt_right" headers="INT_MRI">2562</td>
+<td class="gt_row gt_right" headers="INT_CDR">111</td>
+<td class="gt_row gt_left" headers="Interval_Measure_Amyloid">INT_PET</td>
+<td class="gt_row gt_right" headers="Interval_Days_Amyloid">2567</td>
+<td class="gt_row gt_right" headers="WEIGHT.lb">169.00000</td>
+<td class="gt_row gt_right" headers="HEIGHT.in">61.00</td>
+<td class="gt_row gt_right" headers="BMI">31.93194</td>
+<td class="gt_row gt_right" headers="Cancer">0</td>
+<td class="gt_row gt_right" headers="Active.Depression">0</td>
+<td class="gt_row gt_right" headers="Hypercholesterolemia">0</td>
+<td class="gt_row gt_right" headers="Hypertension">1</td>
+<td class="gt_row gt_right" headers="Diabetes">0</td>
+<td class="gt_row gt_right" headers="Liver.Disease">0</td>
+<td class="gt_row gt_right" headers="Alcohol.Abuse">0</td>
+<td class="gt_row gt_right" headers="Tobacco.Use.PastOrPresent">1</td>
+<td class="gt_row gt_right" headers="Autoimmune.Disorder">0</td>
+<td class="gt_row gt_right" headers="Thyroid.Disease">0</td>
+<td class="gt_row gt_right" headers="Cardiovascular.Disease">0</td>
+<td class="gt_row gt_right" headers="Reads">11190785</td>
+<td class="gt_row gt_right" headers="Richness">81</td>
+<td class="gt_row gt_right" headers="Shannon">3.319742</td>
+<td class="gt_row gt_right" headers="Tax.PCoA1">0.102162752</td>
+<td class="gt_row gt_right" headers="Tax.PCoA2">0.19155728</td>
+<td class="gt_row gt_right" headers="FBratio">4.4321218886551002</td>
+<td class="gt_row gt_right" headers="Fnl.Richness">265</td>
+<td class="gt_row gt_right" headers="Fnl.Shannon">5.040629</td>
+<td class="gt_row gt_right" headers="Fnl.PCoA1">-0.049224637</td>
+<td class="gt_row gt_right" headers="Fnl.PCoA2">0.014985821</td>
+</tr>
+<tr class="even">
+<td class="gt_row gt_left" headers="Run">SRR17648441</td>
+<td class="gt_row gt_left" headers="Assay Type">WGS</td>
+<td class="gt_row gt_right" headers="AvgSpotLen">246</td>
+<td class="gt_row gt_right" headers="Bases">1988088952</td>
+<td class="gt_row gt_left" headers="BioProject">PRJNA798058</td>
+<td class="gt_row gt_left" headers="BioSample">SAMN25046605</td>
+<td class="gt_row gt_left" headers="BioSampleModel">Metagenome or environmental</td>
+<td class="gt_row gt_right" headers="Bytes">750726485</td>
+<td class="gt_row gt_left" headers="Center Name">WASHINGTON UNIVERSITY IN ST. LOUIS</td>
+<td class="gt_row gt_right" headers="Collection_Date">2020</td>
+<td class="gt_row gt_left" headers="Consent">public</td>
+<td class="gt_row gt_left" headers="DATASTORE filetype">fastq,run.zq,sra</td>
+<td class="gt_row gt_left" headers="DATASTORE provider">gs,ncbi,s3</td>
+<td class="gt_row gt_left" headers="DATASTORE region">gs.us-east1,ncbi.public,s3.us-east-1</td>
+<td class="gt_row gt_left" headers="Experiment">SRX13816616</td>
+<td class="gt_row gt_left" headers="geo_loc_name_country">USA</td>
+<td class="gt_row gt_left" headers="geo_loc_name_country_continent">North America</td>
+<td class="gt_row gt_left" headers="geo_loc_name">USA: St. Louis</td>
+<td class="gt_row gt_left" headers="HOST">Homo sapiens</td>
+<td class="gt_row gt_left" headers="Instrument">Illumina NovaSeq 6000</td>
+<td class="gt_row gt_left" headers="isolation_source">Stool 13</td>
+<td class="gt_row gt_left" headers="lat_lon">38.6270 N 90.1994 W</td>
+<td class="gt_row gt_left" headers="Library Name">Stool 13</td>
+<td class="gt_row gt_left" headers="LibraryLayout">PAIRED</td>
+<td class="gt_row gt_left" headers="LibrarySelection">RANDOM</td>
+<td class="gt_row gt_left" headers="LibrarySource">METAGENOMIC</td>
+<td class="gt_row gt_left" headers="Organism">human gut metagenome</td>
+<td class="gt_row gt_left" headers="Platform">ILLUMINA</td>
+<td class="gt_row gt_right" headers="ReleaseDate">2022-05-01</td>
+<td class="gt_row gt_right" headers="create_date">2022-01-17 19:21:00</td>
+<td class="gt_row gt_right" headers="version">1</td>
+<td class="gt_row gt_right" headers="Sample Name">63032</td>
+<td class="gt_row gt_left" headers="SRA Study">SRP355475</td>
+<td class="gt_row gt_right" headers="Age">81.70137</td>
+<td class="gt_row gt_right" headers="Sex">2</td>
+<td class="gt_row gt_right" headers="Race">5</td>
+<td class="gt_row gt_right" headers="Years Education">16</td>
+<td class="gt_row gt_right" headers="CDR">0</td>
+<td class="gt_row gt_left" headers="LUMIPULSE_CSF.ab42.ab40.ratio">5.9846697999999997E-2</td>
+<td class="gt_row gt_right" headers="LUMIPULSE_CSF_tTau">190</td>
+<td class="gt_row gt_right" headers="LUMIPULSE_CSF_pTau">34.700000000000003</td>
+<td class="gt_row gt_left" headers="Days.SincePETpib">961</td>
+<td class="gt_row gt_left" headers="pib_fsuvr_rsf_tot_cortmean">2.7610000000000001</td>
+<td class="gt_row gt_left" headers="Centiloid.PiB">76.745000000000005</td>
+<td class="gt_row gt_left" headers="Days.SincePETav45">2059</td>
+<td class="gt_row gt_left" headers="av45_fsuvr_rsf_tot_cortmean">2.4359999999999999</td>
+<td class="gt_row gt_left" headers="Centiloid.AV45">87.369600000000005</td>
+<td class="gt_row gt_left" headers="Tracer2Use">PiB</td>
+<td class="gt_row gt_right" headers="combined.Centiloid">76.745000000000005</td>
+<td class="gt_row gt_right" headers="amyloid.positive.AF">1</td>
+<td class="gt_row gt_left" headers="Tauopathy">1.3015000000000001</td>
+<td class="gt_row gt_right" headers="tau.positive.AF">1</td>
+<td class="gt_row gt_right" headers="CortSig_Thickness">2.5486875329999998</td>
+<td class="gt_row gt_right" headers="MR_LV_RV_HIPPOCAMPUS">6504.7000000000007</td>
+<td class="gt_row gt_right" headers="WMH_volume">2848</td>
+<td class="gt_row gt_right" headers="APOE">34</td>
+<td class="gt_row gt_left" headers="APOE4.status">e4+</td>
+<td class="gt_row gt_left" headers="Polygenic Risk Score">-3.7946299999999998E-3</td>
+<td class="gt_row gt_right" headers="INT_PET">137</td>
+<td class="gt_row gt_right" headers="INT_CSF">53</td>
+<td class="gt_row gt_right" headers="INT_MRI">137</td>
+<td class="gt_row gt_right" headers="INT_CDR">179</td>
+<td class="gt_row gt_left" headers="Interval_Measure_Amyloid">INT_PET</td>
+<td class="gt_row gt_right" headers="Interval_Days_Amyloid">137</td>
+<td class="gt_row gt_right" headers="WEIGHT.lb">137.59998</td>
+<td class="gt_row gt_right" headers="HEIGHT.in">66.00</td>
+<td class="gt_row gt_right" headers="BMI">22.20899</td>
+<td class="gt_row gt_right" headers="Cancer">0</td>
+<td class="gt_row gt_right" headers="Active.Depression">0</td>
+<td class="gt_row gt_right" headers="Hypercholesterolemia">0</td>
+<td class="gt_row gt_right" headers="Hypertension">0</td>
+<td class="gt_row gt_right" headers="Diabetes">0</td>
+<td class="gt_row gt_right" headers="Liver.Disease">0</td>
+<td class="gt_row gt_right" headers="Alcohol.Abuse">0</td>
+<td class="gt_row gt_right" headers="Tobacco.Use.PastOrPresent">0</td>
+<td class="gt_row gt_right" headers="Autoimmune.Disorder">0</td>
+<td class="gt_row gt_right" headers="Thyroid.Disease">0</td>
+<td class="gt_row gt_right" headers="Cardiovascular.Disease">0</td>
+<td class="gt_row gt_right" headers="Reads">8067905</td>
+<td class="gt_row gt_right" headers="Richness">80</td>
+<td class="gt_row gt_right" headers="Shannon">3.400113</td>
+<td class="gt_row gt_right" headers="Tax.PCoA1">0.078998610</td>
+<td class="gt_row gt_right" headers="Tax.PCoA2">0.11305744</td>
+<td class="gt_row gt_right" headers="FBratio">2.6135791440320402</td>
+<td class="gt_row gt_right" headers="Fnl.Richness">253</td>
+<td class="gt_row gt_right" headers="Fnl.Shannon">4.998603</td>
+<td class="gt_row gt_right" headers="Fnl.PCoA1">-0.063743224</td>
+<td class="gt_row gt_right" headers="Fnl.PCoA2">0.016006687</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</div>
 </section>
 
 </main>
