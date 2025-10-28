@@ -164,6 +164,7 @@ sb_df <- df[df$`Sample Name` %in% samples, ]
 sb_meta <- meta_df[meta_df$Participant %in% samples, ]
 
 all <- dplyr::left_join(sb_df, sb_meta, by = c(`Sample Name` = "Participant"))
+all <- all[order(all$amyloid.positive.AF),]
 
 gt::gt(all)
 ```
