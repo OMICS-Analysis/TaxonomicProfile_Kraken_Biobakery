@@ -8,7 +8,7 @@
 
 <meta name="author" content="OMICs analysis">
 
-<title>Perfil Taxonómico</title>
+<title>Demo Perfil Taxonómico usando Kraken y BioBackery</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -90,7 +90,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#humann-y-metaphlan" id="toc-humann-y-metaphlan" class="nav-link" data-scroll-target="#humann-y-metaphlan">HUMAnN y MetaPhlAn</a></li>
   <li><a href="#humann-data" id="toc-humann-data" class="nav-link" data-scroll-target="#humann-data">HUMAnN data</a></li>
   <li><a href="#metaphlan-data" id="toc-metaphlan-data" class="nav-link" data-scroll-target="#metaphlan-data">MetaPhlAn data</a></li>
+  <li><a href="#otros-softwares" id="toc-otros-softwares" class="nav-link" data-scroll-target="#otros-softwares">Otros softwares:</a>
+  <ul class="collapse">
+  <li><a href="#sratools" id="toc-sratools" class="nav-link" data-scroll-target="#sratools">SRATools</a></li>
   </ul></li>
+  </ul></li>
+  <li><a href="#conjunto-de-datos" id="toc-conjunto-de-datos" class="nav-link" data-scroll-target="#conjunto-de-datos">Conjunto de datos</a></li>
   </ul>
 </nav>
 </div>
@@ -100,7 +105,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Perfil Taxonómico</h1>
+<h1 class="title">Demo Perfil Taxonómico usando Kraken y BioBackery</h1>
 </div>
 
 
@@ -133,7 +138,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#humann-y-metaphlan" id="toc-humann-y-metaphlan">HUMAnN y MetaPhlAn</a></li>
   <li><a href="#humann-data" id="toc-humann-data">HUMAnN data</a></li>
   <li><a href="#metaphlan-data" id="toc-metaphlan-data">MetaPhlAn data</a></li>
+  <li><a href="#otros-softwares" id="toc-otros-softwares">Otros softwares:</a>
+  <ul>
+  <li><a href="#sratools" id="toc-sratools">SRATools</a></li>
   </ul></li>
+  </ul></li>
+  <li><a href="#conjunto-de-datos" id="toc-conjunto-de-datos">Conjunto de datos</a></li>
   </ul>
 </nav>
 <div class="quarto-figure quarto-figure-center">
@@ -151,7 +161,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> apt install build-essential g++ libomp-dev wget rsync perl git</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> apt install zlib1g-dev</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p>Posteriormente se clonó el repositorio de Kraken para poder instalarlo:</p>
+<p>Posteriormente se clonó el repositorio de <code>Kraken</code> para poder instalarlo:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> old </span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> clone https://github.com/DerrickWood/kraken2.git</span>
@@ -159,7 +169,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="fu">mkdir</span> <span class="at">-p</span> /home/ubuntu/bin/kraken2</span>
 <span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="ex">./install_kraken2.sh</span> /home/ubuntu/bin/kraken2</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p>La base de datos que se utilizó ya venía previamente indexada, lo cual nos ahorró el paso de generarla desde cero, esta base datos es Estándar y contiene lo siguiente: <code>Refseq archaea, bacteria, viral, plasmid, human, UniVec_Core</code> y es de fecha 07/14/2025.</p>
+<p>La base de datos que se utilizó ya venía previamente indexada, lo cual nos ahorró el paso de generarla desde cero, esta base datos es <code>Estándar</code> y contiene lo siguiente: <code>Refseq archaea, bacteria, viral, plasmid, human, UniVec_Core</code> y es de fecha 07/14/2025.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mkdir</span> <span class="at">-p</span> /home/ubuntu/data/db_standard</span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> /home/ubuntu/data/db_standard </span>
@@ -221,6 +231,19 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="sourceCode cell-code" id="cb12"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="ex">metaphlan</span> <span class="at">--install</span> <span class="at">--bowtie2db</span> /home/ubuntu/data/metaphlan_db <span class="at">--index</span> mpa_vOct22_CHOCOPhlAnSGB_202403</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
+<section id="otros-softwares" class="level2">
+<h2 class="anchored" data-anchor-id="otros-softwares">Otros softwares:</h2>
+<section id="sratools" class="level3">
+<h3 class="anchored" data-anchor-id="sratools">SRATools</h3>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+</section>
+</section>
+<section id="conjunto-de-datos" class="level1">
+<h1>Conjunto de datos</h1>
+<p>Para este <code>Demo</code> utilizamos metagenomas de intestino de el estudio “<a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC10680783/#S8">Gut microbiome composition may be an indicator of preclinical Alzheimer’s disease</a>”. Seleccionamos 3 muestras para 2 condiciones distintas, <code>Sintomas Clínicos de Alzheimer</code> vs <code>Control</code>.</p>
 </section>
 
 </main>
