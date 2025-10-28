@@ -1,0 +1,93 @@
+---
+title: "Perfil Taxonómico"
+author: "OMICs analysis"
+format: 
+  html:
+    toc: true
+    toc-depth: 3
+    theme: yeti
+    toc-location: left-body
+    smooth-scroll: true
+    toc-title: "Contenido"
+editor: visual
+execute:
+  engine: knitr
+lang: es
+---
+
+![](images/logo_OAN_for_white.png){fig-align="center" width="300"}
+
+# Instalaciones
+
+### Kraken
+
+Se realizaron las siguientes descargas directamente desde la terminal:
+
+```{bash, eval=FALSE}
+sudo apt update
+sudo apt install build-essential g++ libomp-dev wget rsync perl git
+sudo apt install zlib1g-dev
+```
+
+Posteriormente se clonó el repositorio de Kraken para poder instalarlo:
+
+```{bash, eval=FALSE}
+cd old 
+git clone https://github.com/DerrickWood/kraken2.git
+cd kraken2
+mkdir -p /home/ubuntu/bin/kraken2
+./install_kraken2.sh /home/ubuntu/bin/kraken2
+```
+
+La base de datos que se utilizó ya venía previamente indexada, lo cual nos ahorró el paso de generarla desde cero, esta base datos es Estándar y contiene lo siguiente: `Refseq archaea, bacteria, viral, plasmid, human, UniVec_Core` y es de fecha 07/14/2025.
+
+```{bash, eval=FALSE}
+mkdir -p /home/ubuntu/data/db_standard
+cd /home/ubuntu/data/db_standard 
+wget https://genome-idx.s3.amazonaws.com/kraken/k2_standard_20250714.tar.gz
+tar -xzf k2_standard_20250714.tar.gz
+```
+
+### Bracken
+
+```{bash, eval=FALSE}
+cd /home/ubuntu/bin
+git clone https://github.com/jenniferlu717/Bracken.git
+cd src/ && make
+```
+
+### HUMAnN y MetaPhlAn
+
+La combinación estable y compatible es HUMAnN 3.8 con MetaPhlAn 4.1 (hay que evitar versiones más nuevas como MetaPhlAn 4.2, que rompen la integración)
+
+```{bash, eval=FALSE}
+/home/ubuntu/miniconda3/bin/conda config --add channels defaults
+/home/ubuntu/miniconda3/bin/conda config --add channels bioconda
+/home/ubuntu/miniconda3/bin/conda config --add channels conda-forge
+/home/ubuntu/miniconda3/bin/conda config --add channels biobakery
+```
+
+```{bash, eval=FALSE}
+/home/ubuntu/miniconda3/bin/conda create -n bakery_env -y
+/home/ubuntu/miniconda3/bin/conda init bash
+source ~/.bashrc
+```
+
+```{bash, eval=FALSE}
+conda activate bakery_env
+conda install humann=3.8 metaphlan=4.1 -y
+
+```
+
+#### Preparación de sus respectivas bases de datos
+
+```{bash, eval=FALSE}
+mkdir -p /home/ubuntu/data/humann_db    
+mkdir -p /home/ubuntu/data/metaphlan_db 
+```
+
+HUMAnN
+
+```{bash, eval=FALSE}
+humann_databases --download chocophlan full /home/ubuntu/data/humann_db --update-config yes 
+```
