@@ -88,6 +88,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#kraken" id="toc-kraken" class="nav-link" data-scroll-target="#kraken">Kraken</a></li>
   <li><a href="#bracken" id="toc-bracken" class="nav-link" data-scroll-target="#bracken">Bracken</a></li>
   <li><a href="#humann-y-metaphlan" id="toc-humann-y-metaphlan" class="nav-link" data-scroll-target="#humann-y-metaphlan">HUMAnN y MetaPhlAn</a></li>
+  <li><a href="#humann-data" id="toc-humann-data" class="nav-link" data-scroll-target="#humann-data">HUMAnN data</a></li>
+  <li><a href="#metaphlan-data" id="toc-metaphlan-data" class="nav-link" data-scroll-target="#metaphlan-data">MetaPhlAn data</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -129,6 +131,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#kraken" id="toc-kraken">Kraken</a></li>
   <li><a href="#bracken" id="toc-bracken">Bracken</a></li>
   <li><a href="#humann-y-metaphlan" id="toc-humann-y-metaphlan">HUMAnN y MetaPhlAn</a></li>
+  <li><a href="#humann-data" id="toc-humann-data">HUMAnN data</a></li>
+  <li><a href="#metaphlan-data" id="toc-metaphlan-data">MetaPhlAn data</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -189,17 +193,33 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> activate bakery_env</span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> install humann=3.8 metaphlan=4.1 <span class="at">-y</span></span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<section id="preparación-de-sus-respectivas-bases-de-datos" class="level4">
-<h4 class="anchored" data-anchor-id="preparación-de-sus-respectivas-bases-de-datos">Preparación de sus respectivas bases de datos</h4>
+<p>Preparación de sus respectivas bases de datos:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mkdir</span> <span class="at">-p</span> /home/ubuntu/data/humann_db    </span>
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="fu">mkdir</span> <span class="at">-p</span> /home/ubuntu/data/metaphlan_db </span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p>HUMAnN</p>
+</section>
+<section id="humann-data" class="level3">
+<h3 class="anchored" data-anchor-id="humann-data">HUMAnN data</h3>
+<p>ChocoPhlAn (completa):</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="ex">humann_databases</span> <span class="at">--download</span> chocophlan full /home/ubuntu/data/humann_db <span class="at">--update-config</span> yes </span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
+<p>Uniref90:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="ex">humann_databases</span> <span class="at">--download</span> uniref uniref90_diamond /home/ubuntu/data/humann_db <span class="at">--update-config</span> yes</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Utility mapping:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="ex">humann_databases</span> <span class="at">--download</span> utility_mapping full /home/ubuntu/data/humann_db <span class="at">--update-config</span> yes</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 </section>
+<section id="metaphlan-data" class="level3">
+<h3 class="anchored" data-anchor-id="metaphlan-data">MetaPhlAn data</h3>
+<p>Se usó el índice compatible mpa_vOct22_CHOCOPhlAnSGB_202403 (integración con HUMAnN 3.8):</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="ex">metaphlan</span> <span class="at">--install</span> <span class="at">--bowtie2db</span> /home/ubuntu/data/metaphlan_db <span class="at">--index</span> mpa_vOct22_CHOCOPhlAnSGB_202403</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 </section>
 </section>
 
