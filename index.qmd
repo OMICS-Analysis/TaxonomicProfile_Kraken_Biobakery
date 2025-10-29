@@ -17,9 +17,9 @@ lang: es
 
 ![](images/logo_OAN_for_white.png){fig-align="center" width="300"}
 
-# Instalaciones
+# Instalaciones y configuraciones
 
-### Kraken
+### Kraken2
 
 Se realizaron las siguientes descargas directamente desde la terminal:
 
@@ -47,6 +47,8 @@ cd /home/ubuntu/data/db_standard
 wget https://genome-idx.s3.amazonaws.com/kraken/k2_standard_20250714.tar.gz
 tar -xzf k2_standard_20250714.tar.gz
 ```
+
+Nota: una vez que se termina de descomprimir hay que eliminar el archivo `k2_standard_20250714.tar.gz` para ahorrar espacio.
 
 ### Bracken
 
@@ -111,7 +113,7 @@ humann_databases --download utility_mapping full /home/ubuntu/data/humann_db --u
 Se usó el índice compatible mpa_vOct22_CHOCOPhlAnSGB_202403 (integración con HUMAnN 3.8):
 
 ```{bash, eval=FALSE}
-metaphlan --install --bowtie2db /home/ubuntu/data/metaphlan_db --index mpa_vOct22_CHOCOPhlAnSGB_202403
+metaphlan --install --bowtie2db --index mpa_vOct22_CHOCOPhlAnSGB_202403
 ```
 
 ## Otros softwares:
@@ -119,25 +121,20 @@ metaphlan --install --bowtie2db /home/ubuntu/data/metaphlan_db --index mpa_vOct2
 ### SRATools
 
 ```{bash, eval=FALSE}
-
-```
-
-### CutAdapt
-
-```{bash, eval=FALSE}
-
-```
-
-### Trimmomatic
-
-```{bash, eval=FALSE}
-
+cd /home/ubuntu/bin
+wget --output-document sratoolkit.tar.gz https://ftp-trace.ncbi.nlm.nih.gov/sra/sdk/current/sratoolkit.current-ubuntu64.tar.gz
+tar -vxzf sratoolkit.tar.gz
+export PATH=$PWD/sratoolkit.3.2.1-ubuntu64/bin:$PATH
 ```
 
 ### KneadData
 
-```{bash, eval=FALSE}
+Se utilizó esta herramienta para hacer el proceso de `Trimmomatic` y quitar el ADN de hospedero (humano), se puede personalizar al genoma de hospedero que convenga. Es recomendable instalarla en el mismo entorno Conda (`bakery_env`) para mantener la compatibilidad y simplicidad.
 
+```{bash, eval=FALSE}
+conda install -c bioconda kneaddata -y
+mkdir -p /home/ubuntu/data/kneaddata_db
+kneaddata_database --download human_genome bowtie2 /home/ubuntu/data/kneaddata_db
 ```
 
 ### BBTools
@@ -148,7 +145,7 @@ metaphlan --install --bowtie2db /home/ubuntu/data/metaphlan_db --index mpa_vOct2
 
 # Conjunto de datos
 
-Para este `Demo` utilizamos metagenomas de intestino de humano del estudio "[Gut microbiome composition may be an indicator of preclinical Alzheimer’s disease](https://pmc.ncbi.nlm.nih.gov/articles/PMC10680783/#S8)". Seleccionamos 3 muestras para 2 condiciones distintas, `Sintomas Clínicos de Alzheimer` vs `Control`.
+Para este `Demo` utilizamos metagenomas de intestino de humano del estudio "[Gut microbiome composition may be an indicator of preclinical Alzheimer’s disease](https://pmc.ncbi.nlm.nih.gov/articles/PMC10680783/#S8)". Seleccionamos 3 muestras para 2 condiciones distintas, `Sintomas Pre-Clínicos de Alzheimer` vs `Pacientes Sanos`.
 
 Aqui están los metadatos asociados a cada muestra:
 
@@ -167,4 +164,27 @@ all <- dplyr::left_join(sb_df, sb_meta, by = c(`Sample Name` = "Participant"))
 all <- all[order(all$amyloid.positive.AF),]
 
 gt::gt(all)
+```
+
+## Descarga de los datos
+
+```{bash, eval=FALSE}
+prefetch SRR17648356
+faster-dump --split-files SRR17648356/SRR17648356.sra
+gzip SRR17648356_1.fastq
+gzip SRR17648356_2.fastq
+```
+
+## Preprocemiento
+
+Con este paso quitamos ADN contaminante del hospedero y eliminamos secuencias adaptadoras.
+
+```{bash, eval=FALSE}
+kneaddata -i1 SRR17648356_1.fastq.gz\
+-i2 SRR17648356_2.fastq.gz --output out_kneaddata\
+--reference-db kneaddata_db --threads 8\
+--trimmomatic-options="LEADING:10"\
+--trimmomatic-options="TRAILING:10"\
+--trimmomatic-options="SLIDINGWINDOW:4:20"\
+--trimmomatic-options="MINLEN:60" > $SRR17648356-$(date +%s)_kneaddata.log 2>&1
 ```

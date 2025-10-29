@@ -83,9 +83,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">Contenido</h2>
    
   <ul>
-  <li><a href="#instalaciones" id="toc-instalaciones" class="nav-link active" data-scroll-target="#instalaciones">Instalaciones</a>
+  <li><a href="#instalaciones-y-configuraciones" id="toc-instalaciones-y-configuraciones" class="nav-link active" data-scroll-target="#instalaciones-y-configuraciones">Instalaciones y configuraciones</a>
   <ul class="collapse">
-  <li><a href="#kraken" id="toc-kraken" class="nav-link" data-scroll-target="#kraken">Kraken</a></li>
+  <li><a href="#kraken2" id="toc-kraken2" class="nav-link" data-scroll-target="#kraken2">Kraken2</a></li>
   <li><a href="#bracken" id="toc-bracken" class="nav-link" data-scroll-target="#bracken">Bracken</a></li>
   <li><a href="#humann-y-metaphlan" id="toc-humann-y-metaphlan" class="nav-link" data-scroll-target="#humann-y-metaphlan">HUMAnN y MetaPhlAn</a></li>
   <li><a href="#humann-data" id="toc-humann-data" class="nav-link" data-scroll-target="#humann-data">HUMAnN data</a></li>
@@ -93,13 +93,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#otros-softwares" id="toc-otros-softwares" class="nav-link" data-scroll-target="#otros-softwares">Otros softwares:</a>
   <ul class="collapse">
   <li><a href="#sratools" id="toc-sratools" class="nav-link" data-scroll-target="#sratools">SRATools</a></li>
-  <li><a href="#cutadapt" id="toc-cutadapt" class="nav-link" data-scroll-target="#cutadapt">CutAdapt</a></li>
-  <li><a href="#trimmomatic" id="toc-trimmomatic" class="nav-link" data-scroll-target="#trimmomatic">Trimmomatic</a></li>
   <li><a href="#kneaddata" id="toc-kneaddata" class="nav-link" data-scroll-target="#kneaddata">KneadData</a></li>
   <li><a href="#bbtools" id="toc-bbtools" class="nav-link" data-scroll-target="#bbtools">BBTools</a></li>
   </ul></li>
   </ul></li>
-  <li><a href="#conjunto-de-datos" id="toc-conjunto-de-datos" class="nav-link" data-scroll-target="#conjunto-de-datos">Conjunto de datos</a></li>
+  <li><a href="#conjunto-de-datos" id="toc-conjunto-de-datos" class="nav-link" data-scroll-target="#conjunto-de-datos">Conjunto de datos</a>
+  <ul class="collapse">
+  <li><a href="#descarga-de-los-datos" id="toc-descarga-de-los-datos" class="nav-link" data-scroll-target="#descarga-de-los-datos">Descarga de los datos</a></li>
+  <li><a href="#preprocemiento" id="toc-preprocemiento" class="nav-link" data-scroll-target="#preprocemiento">Preprocemiento</a></li>
+  </ul></li>
   </ul>
 </nav>
 </div>
@@ -135,9 +137,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">Contenido</h2>
    
   <ul>
-  <li><a href="#instalaciones" id="toc-instalaciones">Instalaciones</a>
+  <li><a href="#instalaciones-y-configuraciones" id="toc-instalaciones-y-configuraciones">Instalaciones y configuraciones</a>
   <ul>
-  <li><a href="#kraken" id="toc-kraken">Kraken</a></li>
+  <li><a href="#kraken2" id="toc-kraken2">Kraken2</a></li>
   <li><a href="#bracken" id="toc-bracken">Bracken</a></li>
   <li><a href="#humann-y-metaphlan" id="toc-humann-y-metaphlan">HUMAnN y MetaPhlAn</a></li>
   <li><a href="#humann-data" id="toc-humann-data">HUMAnN data</a></li>
@@ -145,13 +147,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#otros-softwares" id="toc-otros-softwares">Otros softwares:</a>
   <ul>
   <li><a href="#sratools" id="toc-sratools">SRATools</a></li>
-  <li><a href="#cutadapt" id="toc-cutadapt">CutAdapt</a></li>
-  <li><a href="#trimmomatic" id="toc-trimmomatic">Trimmomatic</a></li>
   <li><a href="#kneaddata" id="toc-kneaddata">KneadData</a></li>
   <li><a href="#bbtools" id="toc-bbtools">BBTools</a></li>
   </ul></li>
   </ul></li>
-  <li><a href="#conjunto-de-datos" id="toc-conjunto-de-datos">Conjunto de datos</a></li>
+  <li><a href="#conjunto-de-datos" id="toc-conjunto-de-datos">Conjunto de datos</a>
+  <ul>
+  <li><a href="#descarga-de-los-datos" id="toc-descarga-de-los-datos">Descarga de los datos</a></li>
+  <li><a href="#preprocemiento" id="toc-preprocemiento">Preprocemiento</a></li>
+  </ul></li>
   </ul>
 </nav>
 <div class="quarto-figure quarto-figure-center">
@@ -159,10 +163,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p><img src="images/logo_OAN_for_white.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="300"></p>
 </figure>
 </div>
-<section id="instalaciones" class="level1">
-<h1>Instalaciones</h1>
-<section id="kraken" class="level3">
-<h3 class="anchored" data-anchor-id="kraken">Kraken</h3>
+<section id="instalaciones-y-configuraciones" class="level1">
+<h1>Instalaciones y configuraciones</h1>
+<section id="kraken2" class="level3">
+<h3 class="anchored" data-anchor-id="kraken2">Kraken2</h3>
 <p>Se realizaron las siguientes descargas directamente desde la terminal:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> apt update</span>
@@ -184,6 +188,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="fu">wget</span> https://genome-idx.s3.amazonaws.com/kraken/k2_standard_20250714.tar.gz</span>
 <span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="fu">tar</span> <span class="at">-xzf</span> k2_standard_20250714.tar.gz</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
+<p>Nota: una vez que se termina de descomprimir hay que eliminar el archivo <code>k2_standard_20250714.tar.gz</code> para ahorrar espacio.</p>
 </section>
 <section id="bracken" class="level3">
 <h3 class="anchored" data-anchor-id="bracken">Bracken</h3>
@@ -236,7 +241,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h3 class="anchored" data-anchor-id="metaphlan-data">MetaPhlAn data</h3>
 <p>Se usó el índice compatible mpa_vOct22_CHOCOPhlAnSGB_202403 (integración con HUMAnN 3.8):</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="ex">metaphlan</span> <span class="at">--install</span> <span class="at">--bowtie2db</span> /home/ubuntu/data/metaphlan_db <span class="at">--index</span> mpa_vOct22_CHOCOPhlAnSGB_202403</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="ex">metaphlan</span> <span class="at">--install</span> <span class="at">--bowtie2db</span> <span class="at">--index</span> mpa_vOct22_CHOCOPhlAnSGB_202403</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="otros-softwares" class="level2">
@@ -244,58 +249,52 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="sratools" class="level3">
 <h3 class="anchored" data-anchor-id="sratools">SRATools</h3>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</section>
-<section id="cutadapt" class="level3">
-<h3 class="anchored" data-anchor-id="cutadapt">CutAdapt</h3>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</section>
-<section id="trimmomatic" class="level3">
-<h3 class="anchored" data-anchor-id="trimmomatic">Trimmomatic</h3>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> /home/ubuntu/bin</span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="fu">wget</span> <span class="at">--output-document</span> sratoolkit.tar.gz https://ftp-trace.ncbi.nlm.nih.gov/sra/sdk/current/sratoolkit.current-ubuntu64.tar.gz</span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a><span class="fu">tar</span> <span class="at">-vxzf</span> sratoolkit.tar.gz</span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a><span class="bu">export</span> <span class="va">PATH</span><span class="op">=</span><span class="va">$PWD</span>/sratoolkit.3.2.1-ubuntu64/bin:<span class="va">$PATH</span></span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="kneaddata" class="level3">
 <h3 class="anchored" data-anchor-id="kneaddata">KneadData</h3>
+<p>Se utilizó esta herramienta para hacer el proceso de <code>Trimmomatic</code> y quitar el ADN de hospedero (humano), se puede personalizar al genoma de hospedero que convenga. Es recomendable instalarla en el mismo entorno Conda (<code>bakery_env</code>) para mantener la compatibilidad y simplicidad.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> install <span class="at">-c</span> bioconda kneaddata <span class="at">-y</span></span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a><span class="fu">mkdir</span> <span class="at">-p</span> /home/ubuntu/data/kneaddata_db</span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a><span class="ex">kneaddata_database</span> <span class="at">--download</span> human_genome bowtie2 /home/ubuntu/data/kneaddata_db</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="bbtools" class="level3">
 <h3 class="anchored" data-anchor-id="bbtools">BBTools</h3>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 </section>
 </section>
 <section id="conjunto-de-datos" class="level1">
 <h1>Conjunto de datos</h1>
-<p>Para este <code>Demo</code> utilizamos metagenomas de intestino de humano del estudio “<a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC10680783/#S8">Gut microbiome composition may be an indicator of preclinical Alzheimer’s disease</a>”. Seleccionamos 3 muestras para 2 condiciones distintas, <code>Sintomas Clínicos de Alzheimer</code> vs <code>Control</code>.</p>
+<p>Para este <code>Demo</code> utilizamos metagenomas de intestino de humano del estudio “<a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC10680783/#S8">Gut microbiome composition may be an indicator of preclinical Alzheimer’s disease</a>”. Seleccionamos 3 muestras para 2 condiciones distintas, <code>Sintomas Pre-Clínicos de Alzheimer</code> vs <code>Pacientes Sanos</code>.</p>
 <p>Aqui están los metadatos asociados a cada muestra:</p>
 <div class="cell">
 <div class="cell-output-display">
-<div id="ialusdvxrv" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#ialusdvxrv table {
+<div id="wivdqotdoz" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#wivdqotdoz table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#ialusdvxrv thead, #ialusdvxrv tbody, #ialusdvxrv tfoot, #ialusdvxrv tr, #ialusdvxrv td, #ialusdvxrv th {
+#wivdqotdoz thead, #wivdqotdoz tbody, #wivdqotdoz tfoot, #wivdqotdoz tr, #wivdqotdoz td, #wivdqotdoz th {
   border-style: none;
 }
 
-#ialusdvxrv p {
+#wivdqotdoz p {
   margin: 0;
   padding: 0;
 }
 
-#ialusdvxrv .gt_table {
+#wivdqotdoz .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -321,12 +320,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-left-color: #D3D3D3;
 }
 
-#ialusdvxrv .gt_caption {
+#wivdqotdoz .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#ialusdvxrv .gt_title {
+#wivdqotdoz .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -338,7 +337,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-bottom-width: 0;
 }
 
-#ialusdvxrv .gt_subtitle {
+#wivdqotdoz .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -350,7 +349,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-top-width: 0;
 }
 
-#ialusdvxrv .gt_heading {
+#wivdqotdoz .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -362,13 +361,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-right-color: #D3D3D3;
 }
 
-#ialusdvxrv .gt_bottom_border {
+#wivdqotdoz .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#ialusdvxrv .gt_col_headings {
+#wivdqotdoz .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -383,7 +382,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-right-color: #D3D3D3;
 }
 
-#ialusdvxrv .gt_col_heading {
+#wivdqotdoz .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -403,7 +402,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   overflow-x: hidden;
 }
 
-#ialusdvxrv .gt_column_spanner_outer {
+#wivdqotdoz .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -415,15 +414,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   padding-right: 4px;
 }
 
-#ialusdvxrv .gt_column_spanner_outer:first-child {
+#wivdqotdoz .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#ialusdvxrv .gt_column_spanner_outer:last-child {
+#wivdqotdoz .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#ialusdvxrv .gt_column_spanner {
+#wivdqotdoz .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -435,11 +434,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   width: 100%;
 }
 
-#ialusdvxrv .gt_spanner_row {
+#wivdqotdoz .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#ialusdvxrv .gt_group_heading {
+#wivdqotdoz .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -465,7 +464,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   text-align: left;
 }
 
-#ialusdvxrv .gt_empty_group_heading {
+#wivdqotdoz .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -480,15 +479,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   vertical-align: middle;
 }
 
-#ialusdvxrv .gt_from_md > :first-child {
+#wivdqotdoz .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#ialusdvxrv .gt_from_md > :last-child {
+#wivdqotdoz .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#ialusdvxrv .gt_row {
+#wivdqotdoz .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -507,7 +506,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   overflow-x: hidden;
 }
 
-#ialusdvxrv .gt_stub {
+#wivdqotdoz .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -520,7 +519,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   padding-right: 5px;
 }
 
-#ialusdvxrv .gt_stub_row_group {
+#wivdqotdoz .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -534,15 +533,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   vertical-align: top;
 }
 
-#ialusdvxrv .gt_row_group_first td {
+#wivdqotdoz .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#ialusdvxrv .gt_row_group_first th {
+#wivdqotdoz .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#ialusdvxrv .gt_summary_row {
+#wivdqotdoz .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -552,16 +551,16 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   padding-right: 5px;
 }
 
-#ialusdvxrv .gt_first_summary_row {
+#wivdqotdoz .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#ialusdvxrv .gt_first_summary_row.thick {
+#wivdqotdoz .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#ialusdvxrv .gt_last_summary_row {
+#wivdqotdoz .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -571,7 +570,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-bottom-color: #D3D3D3;
 }
 
-#ialusdvxrv .gt_grand_summary_row {
+#wivdqotdoz .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -581,7 +580,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   padding-right: 5px;
 }
 
-#ialusdvxrv .gt_first_grand_summary_row {
+#wivdqotdoz .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -591,7 +590,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-top-color: #D3D3D3;
 }
 
-#ialusdvxrv .gt_last_grand_summary_row_top {
+#wivdqotdoz .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -601,11 +600,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-bottom-color: #D3D3D3;
 }
 
-#ialusdvxrv .gt_striped {
+#wivdqotdoz .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#ialusdvxrv .gt_table_body {
+#wivdqotdoz .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -614,7 +613,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-bottom-color: #D3D3D3;
 }
 
-#ialusdvxrv .gt_footnotes {
+#wivdqotdoz .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -628,7 +627,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-right-color: #D3D3D3;
 }
 
-#ialusdvxrv .gt_footnote {
+#wivdqotdoz .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -637,7 +636,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   padding-right: 5px;
 }
 
-#ialusdvxrv .gt_sourcenotes {
+#wivdqotdoz .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -651,7 +650,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-right-color: #D3D3D3;
 }
 
-#ialusdvxrv .gt_sourcenote {
+#wivdqotdoz .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -659,72 +658,72 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   padding-right: 5px;
 }
 
-#ialusdvxrv .gt_left {
+#wivdqotdoz .gt_left {
   text-align: left;
 }
 
-#ialusdvxrv .gt_center {
+#wivdqotdoz .gt_center {
   text-align: center;
 }
 
-#ialusdvxrv .gt_right {
+#wivdqotdoz .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#ialusdvxrv .gt_font_normal {
+#wivdqotdoz .gt_font_normal {
   font-weight: normal;
 }
 
-#ialusdvxrv .gt_font_bold {
+#wivdqotdoz .gt_font_bold {
   font-weight: bold;
 }
 
-#ialusdvxrv .gt_font_italic {
+#wivdqotdoz .gt_font_italic {
   font-style: italic;
 }
 
-#ialusdvxrv .gt_super {
+#wivdqotdoz .gt_super {
   font-size: 65%;
 }
 
-#ialusdvxrv .gt_footnote_marks {
+#wivdqotdoz .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#ialusdvxrv .gt_asterisk {
+#wivdqotdoz .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#ialusdvxrv .gt_indent_1 {
+#wivdqotdoz .gt_indent_1 {
   text-indent: 5px;
 }
 
-#ialusdvxrv .gt_indent_2 {
+#wivdqotdoz .gt_indent_2 {
   text-indent: 10px;
 }
 
-#ialusdvxrv .gt_indent_3 {
+#wivdqotdoz .gt_indent_3 {
   text-indent: 15px;
 }
 
-#ialusdvxrv .gt_indent_4 {
+#wivdqotdoz .gt_indent_4 {
   text-indent: 20px;
 }
 
-#ialusdvxrv .gt_indent_5 {
+#wivdqotdoz .gt_indent_5 {
   text-indent: 25px;
 }
 
-#ialusdvxrv .katex-display {
+#wivdqotdoz .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#ialusdvxrv div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#wivdqotdoz div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
@@ -1369,6 +1368,28 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </div>
+<section id="descarga-de-los-datos" class="level2">
+<h2 class="anchored" data-anchor-id="descarga-de-los-datos">Descarga de los datos</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="ex">prefetch</span> SRR17648356</span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a><span class="ex">faster-dump</span> <span class="at">--split-files</span> SRR17648356/SRR17648356.sra</span>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a><span class="fu">gzip</span> SRR17648356_1.fastq</span>
+<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a><span class="fu">gzip</span> SRR17648356_2.fastq</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="preprocemiento" class="level2">
+<h2 class="anchored" data-anchor-id="preprocemiento">Preprocemiento</h2>
+<p>Con este paso quitamos ADN contaminante del hospedero y eliminamos secuencias adaptadoras.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="ex">kneaddata</span> <span class="at">-i1</span> SRR17648356_1.fastq.gz<span class="dt">\</span></span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>-i2 SRR17648356_2.fastq.gz <span class="at">--output</span> out_kneaddata<span class="dt">\</span></span>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>--reference-db kneaddata_db <span class="at">--threads</span> 8<span class="dt">\</span></span>
+<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a>--trimmomatic-options=<span class="st">"LEADING:10"</span><span class="dt">\</span></span>
+<span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a>--trimmomatic-options=<span class="st">"TRAILING:10"</span><span class="dt">\</span></span>
+<span id="cb17-6"><a href="#cb17-6" aria-hidden="true" tabindex="-1"></a>--trimmomatic-options=<span class="st">"SLIDINGWINDOW:4:20"</span><span class="dt">\</span></span>
+<span id="cb17-7"><a href="#cb17-7" aria-hidden="true" tabindex="-1"></a>--trimmomatic-options=<span class="st">"MINLEN:60"</span> <span class="op">&gt;</span> <span class="va">$SRR17648356</span>-<span class="va">$(</span><span class="fu">date</span> +%s<span class="va">)</span>_kneaddata.log <span class="dv">2</span><span class="op">&gt;&amp;</span><span class="dv">1</span></span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
 </section>
 
 </main>
