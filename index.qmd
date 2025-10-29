@@ -137,10 +137,23 @@ mkdir -p /home/ubuntu/data/kneaddata_db
 kneaddata_database --download human_genome bowtie2 /home/ubuntu/data/kneaddata_db
 ```
 
-### BBTools
+### Flash
 
 ```{bash, eval=FALSE}
 
+```
+
+### Trimmomatic
+
+```{bash, eval=FALSE}
+cd /home/ubuntu/bin
+wget http://www.usadellab.org/cms/uploads/supplementary/Trimmomatic/Trimmomatic-0.39.zip
+```
+
+### CutAdapt
+
+```{bash, eval=FALSE}
+sudo apt install cutadapt
 ```
 
 # Conjunto de datos
@@ -173,6 +186,219 @@ prefetch SRR17648356
 faster-dump --split-files SRR17648356/SRR17648356.sra
 gzip SRR17648356_1.fastq
 gzip SRR17648356_2.fastq
+```
+
+## Estructura proyecto
+
+```{bash, eval=FALSE}
+2025_Demo_Biobakery
+│   ├── RUN_0_raw.sh
+│   ├── RUN_1_QC.sh
+│   ├── bin
+│   ├── config.sh
+│   ├── log
+│   ├── nohup.out
+│   ├── old
+│   └── results
+    ├── 0_raw
+    │   ├── SRR17648356_1.fastq.gz
+    │   ├── SRR17648356_2.fastq.gz
+    │   ├── SRR17648378_1.fastq.gz
+    │   ├── SRR17648378_2.fastq.gz
+    │   ├── SRR17648422_1.fastq.gz
+    │   ├── SRR17648422_2.fastq.gz
+    │   ├── SRR17648430_1.fastq.gz
+    │   ├── SRR17648430_2.fastq.gz
+    │   ├── SRR17648436_1.fastq.gz
+    │   ├── SRR17648436_2.fastq.gz
+    │   ├── SRR17648441_1.fastq.gz
+    │   └── SRR17648441_2.fastq.gz
+    ├── 1_QC
+    │   ├── SRR17648356_1_cutadapt.fastq.gz
+    │   ├── SRR17648356_1_cutadapt.trimmed.fastq.gz
+    │   ├── SRR17648356_1_cutadapt.trimmed_kneaddata.log
+    │   ├── SRR17648356_1_cutadapt.trimmed_kneaddata.repeats.removed.1.fastq
+    │   ├── SRR17648356_1_cutadapt.trimmed_kneaddata.repeats.removed.2.fastq
+    │   ├── SRR17648356_1_cutadapt.trimmed_kneaddata_hg_39_bowtie2_paired_contam_1.fastq
+    │   ├── SRR17648356_1_cutadapt.trimmed_kneaddata_hg_39_bowtie2_paired_contam_2.fastq
+    │   ├── SRR17648356_1_cutadapt.trimmed_kneaddata_hg_39_bowtie2_unmatched_1_contam.fastq
+    │   ├── SRR17648356_1_cutadapt.trimmed_kneaddata_hg_39_bowtie2_unmatched_2_contam.fastq
+    │   ├── SRR17648356_1_cutadapt.trimmed_kneaddata_paired_1.fastq
+    │   ├── SRR17648356_1_cutadapt.trimmed_kneaddata_paired_2.fastq
+    │   ├── SRR17648356_1_cutadapt.trimmed_kneaddata_unmatched_1.fastq
+    │   ├── SRR17648356_1_cutadapt.trimmed_kneaddata_unmatched_2.fastq
+    │   ├── SRR17648356_1_discard.fastq
+    │   ├── SRR17648356_2_cutadapt.fastq.gz
+    │   ├── SRR17648356_2_cutadapt.trimmed.fastq.gz
+    │   ├── SRR17648356_2_discard.fastq
+    │   ├── SRR17648356_cutadapt.log
+    │   └── SRR17648356_trimmomatic.log
+    ├── 2_kraken2
+    ├── 3_bracken
+    └── 4_humann
+
+├── Miniconda3-latest-Linux-x86_64.sh
+├── bin
+│   ├── Bracken
+│   ├── Trimmomatic-0.39
+│   ├── automnt.sh
+│   ├── aws_install.sh
+│   ├── conda_install.sh
+│   ├── github_keyload.sh
+│   ├── github_setup.sh
+│   ├── keys
+│   ├── kraken2
+│   ├── pull-manifest.sh
+│   ├── set_repo.sh
+│   └── sratoolkit.3.2.1-ubuntu64
+├── data
+│   ├── db_standard
+│   ├── humann_db
+│   ├── kneaddata_db
+│   └── nohup.out
+├── log
+├── miniconda3
+│   ├── LICENSE.txt
+│   ├── _conda
+│   ├── bin
+│   ├── compiler_compat
+│   ├── conda-meta
+│   ├── condabin
+│   ├── envs
+│   ├── etc
+│   ├── include
+│   ├── lib
+│   ├── libexec
+│   ├── man
+│   ├── pkgs
+│   ├── share
+│   ├── shell
+│   ├── ssl
+│   ├── uninstall.sh
+│   └── x86_64-conda-linux-gnu
+├── old
+│   ├── Bracken
+│   ├── kraken2
+│   └── miniconda_list.html
+└── snap
+    └── tree
+```
+
+## RUNs
+
+-   config.sh
+
+```{bash, eval=FALSE, echo=FALSE}
+#Project environment
+
+global_bin=/home/ubuntu/bin
+projectdir=/home/ubuntu/2025_Demo_Biobakery
+
+resultsdir=$projectdir/results
+logdir=$projectdir/log
+
+rawdir=$resultsdir/0_raw
+qcdir=$resultsdir/1_QC
+kraken2dir=$resultsdir/2_kraken2
+brackendir=$resultsdir/3_bracken
+humanndir=$resultsdir/4_humann
+
+dbs=/home/ubuntu/data
+
+```
+
+-   RUN_0_raw.sh
+
+```{bash, eval=FALSE, echo=FALSE}
+source config.sh
+
+sra_id=("SRR17648378" "SRR17648430" "SRR17648436" "SRR17648356" "SRR17648422" "SRR17648441")
+
+export PATH=$global_bin/sratoolkit.3.2.1-ubuntu64/bin:$PATH
+cd $rawdir
+
+for id in "${sra_id[@]}"; do
+	echo "SRA: $id"
+	prefetch $id
+	faster-dump --split-files "$rawdir/$id/$id.sra" 
+	gzip "$rawdir/$id_1.fastq"
+	gzip "$rawdir/$id_2.fastq"	
+done
+```
+
+-   RUN_1_QC.sh
+
+```{bash, eval=FALSE, echo=FALSE}
+source config.sh
+
+# Activar el entorno
+#source /home/ubuntu/miniconda3/bin/activate bakery_env
+
+do_cutadapt=
+do_trimmomatic=
+do_kneaddata=1
+
+shutdown=
+threads=8
+file="SRR17648356"
+
+
+if [ $do_cutadapt ]
+then 
+
+#source ~/miniconda/bin/activate cutadapt
+
+/usr/bin/time -v\
+	cutadapt -a GATCGGAAGAGCACACGTCTGAACTCCAGTCA -A AGATCGGAAGAGCGTCGTGTAGGGAAAGAGTGT \
+	--trim-n \
+	--match-read-wildcards -j $threads\
+	-o $qcdir/$file"_1_cutadapt.fastq.gz" -p $qcdir/$file"_2_cutadapt.fastq.gz" \
+	$rawdir/$file"_1.fastq.gz" $rawdir/$file"_2.fastq.gz" > $qcdir/$file"_cutadapt.log" 2>&1
+
+#conda deactivate
+
+fi
+
+
+if [ $do_trimmomatic ]
+then
+	source ~/miniconda3/bin/activate bakery_env
+	echo "trimmomatic for $file"
+
+	/usr/bin/time -v\
+	java -jar /home/ubuntu/bin/Trimmomatic-0.39/trimmomatic-0.39.jar PE -threads $threads -phred33\
+	$qcdir/$file"_1_cutadapt.fastq.gz" $qcdir/$file"_2_cutadapt.fastq.gz" \
+	$qcdir/$file"_1_cutadapt.trimmed.fastq.gz" $qcdir/$file"_1_discard.fastq" \
+	$qcdir/$file"_2_cutadapt.trimmed.fastq.gz" $qcdir/$file"_2_discard.fastq" \
+	ILLUMINACLIP:/home/ubuntu/bin/Trimmomatic-0.39/adapters/NexteraPE-PE.fa:2:30:10:1:TRUE LEADING:10 TRAILING:15 SLIDINGWINDOW:4:20 AVGQUAL:25 MINLEN:60 > $qcdir/$file"_trimmomatic.log" 2>&1
+
+	conda deactivate
+fi
+
+
+if [ $do_kneaddata ] 
+then
+
+	source ~/miniconda3/bin/activate bakery_env
+
+        /usr/bin/time -v \
+        kneaddata \
+        -i1 $qcdir/$file"_1_cutadapt".trimmed.fastq.gz -i2 $qcdir/$file"_2_cutadapt".trimmed.fastq.gz \
+        --output $qcdir \
+        --reference-db $dbs/kneaddata_db \
+        --threads $threads \
+        --bypass-trim > $logdir/$file-$(date +%s)_kneaddata.log 2>&1
+	
+	conda deactivate
+
+fi
+
+
+# Autoshutdown
+if [ $shutdown ]
+then
+	sudo shutdown now
+fi
 ```
 
 ## Preprocemiento

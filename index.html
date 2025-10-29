@@ -69,7 +69,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="index_files/libs/quarto-html/quarto-syntax-highlighting-37eea08aefeeee20ff55810ff984fec1.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="index_files/libs/bootstrap/bootstrap.min.js"></script>
 <link href="index_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="index_files/libs/bootstrap/bootstrap-ab118eae35bcbb4489c9c23412edfedf.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="index_files/libs/bootstrap/bootstrap-30a2e6d3c8088394efc257bdd87cc71a.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <style>html{ scroll-behavior: smooth; }</style>
 
 
@@ -94,12 +94,16 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <ul class="collapse">
   <li><a href="#sratools" id="toc-sratools" class="nav-link" data-scroll-target="#sratools">SRATools</a></li>
   <li><a href="#kneaddata" id="toc-kneaddata" class="nav-link" data-scroll-target="#kneaddata">KneadData</a></li>
-  <li><a href="#bbtools" id="toc-bbtools" class="nav-link" data-scroll-target="#bbtools">BBTools</a></li>
+  <li><a href="#flash" id="toc-flash" class="nav-link" data-scroll-target="#flash">Flash</a></li>
+  <li><a href="#trimmomatic" id="toc-trimmomatic" class="nav-link" data-scroll-target="#trimmomatic">Trimmomatic</a></li>
+  <li><a href="#cutadapt" id="toc-cutadapt" class="nav-link" data-scroll-target="#cutadapt">CutAdapt</a></li>
   </ul></li>
   </ul></li>
   <li><a href="#conjunto-de-datos" id="toc-conjunto-de-datos" class="nav-link" data-scroll-target="#conjunto-de-datos">Conjunto de datos</a>
   <ul class="collapse">
   <li><a href="#descarga-de-los-datos" id="toc-descarga-de-los-datos" class="nav-link" data-scroll-target="#descarga-de-los-datos">Descarga de los datos</a></li>
+  <li><a href="#estructura-proyecto" id="toc-estructura-proyecto" class="nav-link" data-scroll-target="#estructura-proyecto">Estructura proyecto</a></li>
+  <li><a href="#runs" id="toc-runs" class="nav-link" data-scroll-target="#runs">RUNs</a></li>
   <li><a href="#preprocemiento" id="toc-preprocemiento" class="nav-link" data-scroll-target="#preprocemiento">Preprocemiento</a></li>
   </ul></li>
   </ul>
@@ -148,12 +152,16 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <ul>
   <li><a href="#sratools" id="toc-sratools">SRATools</a></li>
   <li><a href="#kneaddata" id="toc-kneaddata">KneadData</a></li>
-  <li><a href="#bbtools" id="toc-bbtools">BBTools</a></li>
+  <li><a href="#flash" id="toc-flash">Flash</a></li>
+  <li><a href="#trimmomatic" id="toc-trimmomatic">Trimmomatic</a></li>
+  <li><a href="#cutadapt" id="toc-cutadapt">CutAdapt</a></li>
   </ul></li>
   </ul></li>
   <li><a href="#conjunto-de-datos" id="toc-conjunto-de-datos">Conjunto de datos</a>
   <ul>
   <li><a href="#descarga-de-los-datos" id="toc-descarga-de-los-datos">Descarga de los datos</a></li>
+  <li><a href="#estructura-proyecto" id="toc-estructura-proyecto">Estructura proyecto</a></li>
+  <li><a href="#runs" id="toc-runs">RUNs</a></li>
   <li><a href="#preprocemiento" id="toc-preprocemiento">Preprocemiento</a></li>
   </ul></li>
   </ul>
@@ -264,10 +272,23 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a><span class="ex">kneaddata_database</span> <span class="at">--download</span> human_genome bowtie2 /home/ubuntu/data/kneaddata_db</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
-<section id="bbtools" class="level3">
-<h3 class="anchored" data-anchor-id="bbtools">BBTools</h3>
+<section id="flash" class="level3">
+<h3 class="anchored" data-anchor-id="flash">Flash</h3>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb15"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="trimmomatic" class="level3">
+<h3 class="anchored" data-anchor-id="trimmomatic">Trimmomatic</h3>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> /home/ubuntu/bin</span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a><span class="fu">wget</span> http://www.usadellab.org/cms/uploads/supplementary/Trimmomatic/Trimmomatic-0.39.zip</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="cutadapt" class="level3">
+<h3 class="anchored" data-anchor-id="cutadapt">CutAdapt</h3>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> apt install cutadapt</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 </section>
@@ -278,23 +299,23 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>Aqui están los metadatos asociados a cada muestra:</p>
 <div class="cell">
 <div class="cell-output-display">
-<div id="wivdqotdoz" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#wivdqotdoz table {
+<div id="sdzpxzbktn" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#sdzpxzbktn table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#wivdqotdoz thead, #wivdqotdoz tbody, #wivdqotdoz tfoot, #wivdqotdoz tr, #wivdqotdoz td, #wivdqotdoz th {
+#sdzpxzbktn thead, #sdzpxzbktn tbody, #sdzpxzbktn tfoot, #sdzpxzbktn tr, #sdzpxzbktn td, #sdzpxzbktn th {
   border-style: none;
 }
 
-#wivdqotdoz p {
+#sdzpxzbktn p {
   margin: 0;
   padding: 0;
 }
 
-#wivdqotdoz .gt_table {
+#sdzpxzbktn .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -320,12 +341,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-left-color: #D3D3D3;
 }
 
-#wivdqotdoz .gt_caption {
+#sdzpxzbktn .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#wivdqotdoz .gt_title {
+#sdzpxzbktn .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -337,7 +358,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-bottom-width: 0;
 }
 
-#wivdqotdoz .gt_subtitle {
+#sdzpxzbktn .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -349,7 +370,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-top-width: 0;
 }
 
-#wivdqotdoz .gt_heading {
+#sdzpxzbktn .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -361,13 +382,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-right-color: #D3D3D3;
 }
 
-#wivdqotdoz .gt_bottom_border {
+#sdzpxzbktn .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#wivdqotdoz .gt_col_headings {
+#sdzpxzbktn .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -382,7 +403,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-right-color: #D3D3D3;
 }
 
-#wivdqotdoz .gt_col_heading {
+#sdzpxzbktn .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -402,7 +423,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   overflow-x: hidden;
 }
 
-#wivdqotdoz .gt_column_spanner_outer {
+#sdzpxzbktn .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -414,15 +435,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   padding-right: 4px;
 }
 
-#wivdqotdoz .gt_column_spanner_outer:first-child {
+#sdzpxzbktn .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#wivdqotdoz .gt_column_spanner_outer:last-child {
+#sdzpxzbktn .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#wivdqotdoz .gt_column_spanner {
+#sdzpxzbktn .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -434,11 +455,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   width: 100%;
 }
 
-#wivdqotdoz .gt_spanner_row {
+#sdzpxzbktn .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#wivdqotdoz .gt_group_heading {
+#sdzpxzbktn .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -464,7 +485,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   text-align: left;
 }
 
-#wivdqotdoz .gt_empty_group_heading {
+#sdzpxzbktn .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -479,15 +500,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   vertical-align: middle;
 }
 
-#wivdqotdoz .gt_from_md > :first-child {
+#sdzpxzbktn .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#wivdqotdoz .gt_from_md > :last-child {
+#sdzpxzbktn .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#wivdqotdoz .gt_row {
+#sdzpxzbktn .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -506,7 +527,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   overflow-x: hidden;
 }
 
-#wivdqotdoz .gt_stub {
+#sdzpxzbktn .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -519,7 +540,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   padding-right: 5px;
 }
 
-#wivdqotdoz .gt_stub_row_group {
+#sdzpxzbktn .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -533,15 +554,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   vertical-align: top;
 }
 
-#wivdqotdoz .gt_row_group_first td {
+#sdzpxzbktn .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#wivdqotdoz .gt_row_group_first th {
+#sdzpxzbktn .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#wivdqotdoz .gt_summary_row {
+#sdzpxzbktn .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -551,16 +572,16 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   padding-right: 5px;
 }
 
-#wivdqotdoz .gt_first_summary_row {
+#sdzpxzbktn .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#wivdqotdoz .gt_first_summary_row.thick {
+#sdzpxzbktn .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#wivdqotdoz .gt_last_summary_row {
+#sdzpxzbktn .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -570,7 +591,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-bottom-color: #D3D3D3;
 }
 
-#wivdqotdoz .gt_grand_summary_row {
+#sdzpxzbktn .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -580,7 +601,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   padding-right: 5px;
 }
 
-#wivdqotdoz .gt_first_grand_summary_row {
+#sdzpxzbktn .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -590,7 +611,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-top-color: #D3D3D3;
 }
 
-#wivdqotdoz .gt_last_grand_summary_row_top {
+#sdzpxzbktn .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -600,11 +621,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-bottom-color: #D3D3D3;
 }
 
-#wivdqotdoz .gt_striped {
+#sdzpxzbktn .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#wivdqotdoz .gt_table_body {
+#sdzpxzbktn .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -613,7 +634,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-bottom-color: #D3D3D3;
 }
 
-#wivdqotdoz .gt_footnotes {
+#sdzpxzbktn .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -627,7 +648,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-right-color: #D3D3D3;
 }
 
-#wivdqotdoz .gt_footnote {
+#sdzpxzbktn .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -636,7 +657,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   padding-right: 5px;
 }
 
-#wivdqotdoz .gt_sourcenotes {
+#sdzpxzbktn .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -650,7 +671,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   border-right-color: #D3D3D3;
 }
 
-#wivdqotdoz .gt_sourcenote {
+#sdzpxzbktn .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -658,72 +679,72 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   padding-right: 5px;
 }
 
-#wivdqotdoz .gt_left {
+#sdzpxzbktn .gt_left {
   text-align: left;
 }
 
-#wivdqotdoz .gt_center {
+#sdzpxzbktn .gt_center {
   text-align: center;
 }
 
-#wivdqotdoz .gt_right {
+#sdzpxzbktn .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#wivdqotdoz .gt_font_normal {
+#sdzpxzbktn .gt_font_normal {
   font-weight: normal;
 }
 
-#wivdqotdoz .gt_font_bold {
+#sdzpxzbktn .gt_font_bold {
   font-weight: bold;
 }
 
-#wivdqotdoz .gt_font_italic {
+#sdzpxzbktn .gt_font_italic {
   font-style: italic;
 }
 
-#wivdqotdoz .gt_super {
+#sdzpxzbktn .gt_super {
   font-size: 65%;
 }
 
-#wivdqotdoz .gt_footnote_marks {
+#sdzpxzbktn .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#wivdqotdoz .gt_asterisk {
+#sdzpxzbktn .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#wivdqotdoz .gt_indent_1 {
+#sdzpxzbktn .gt_indent_1 {
   text-indent: 5px;
 }
 
-#wivdqotdoz .gt_indent_2 {
+#sdzpxzbktn .gt_indent_2 {
   text-indent: 10px;
 }
 
-#wivdqotdoz .gt_indent_3 {
+#sdzpxzbktn .gt_indent_3 {
   text-indent: 15px;
 }
 
-#wivdqotdoz .gt_indent_4 {
+#sdzpxzbktn .gt_indent_4 {
   text-indent: 20px;
 }
 
-#wivdqotdoz .gt_indent_5 {
+#sdzpxzbktn .gt_indent_5 {
   text-indent: 25px;
 }
 
-#wivdqotdoz .katex-display {
+#sdzpxzbktn .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#wivdqotdoz div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#sdzpxzbktn div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
@@ -1371,23 +1392,131 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="descarga-de-los-datos" class="level2">
 <h2 class="anchored" data-anchor-id="descarga-de-los-datos">Descarga de los datos</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="ex">prefetch</span> SRR17648356</span>
-<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a><span class="ex">faster-dump</span> <span class="at">--split-files</span> SRR17648356/SRR17648356.sra</span>
-<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a><span class="fu">gzip</span> SRR17648356_1.fastq</span>
-<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a><span class="fu">gzip</span> SRR17648356_2.fastq</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="ex">prefetch</span> SRR17648356</span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a><span class="ex">faster-dump</span> <span class="at">--split-files</span> SRR17648356/SRR17648356.sra</span>
+<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a><span class="fu">gzip</span> SRR17648356_1.fastq</span>
+<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a><span class="fu">gzip</span> SRR17648356_2.fastq</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
+</section>
+<section id="estructura-proyecto" class="level2">
+<h2 class="anchored" data-anchor-id="estructura-proyecto">Estructura proyecto</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="ex">2025_Demo_Biobakery</span></span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a><span class="ex">│&nbsp;&nbsp;</span> ├── RUN_0_raw.sh</span>
+<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a><span class="ex">│&nbsp;&nbsp;</span> ├── RUN_1_QC.sh</span>
+<span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a><span class="ex">│&nbsp;&nbsp;</span> ├── bin</span>
+<span id="cb19-5"><a href="#cb19-5" aria-hidden="true" tabindex="-1"></a><span class="ex">│&nbsp;&nbsp;</span> ├── config.sh</span>
+<span id="cb19-6"><a href="#cb19-6" aria-hidden="true" tabindex="-1"></a><span class="ex">│&nbsp;&nbsp;</span> ├── log</span>
+<span id="cb19-7"><a href="#cb19-7" aria-hidden="true" tabindex="-1"></a><span class="ex">│&nbsp;&nbsp;</span> ├── nohup.out</span>
+<span id="cb19-8"><a href="#cb19-8" aria-hidden="true" tabindex="-1"></a><span class="ex">│&nbsp;&nbsp;</span> ├── old</span>
+<span id="cb19-9"><a href="#cb19-9" aria-hidden="true" tabindex="-1"></a><span class="ex">│&nbsp;&nbsp;</span> └── results</span>
+<span id="cb19-10"><a href="#cb19-10" aria-hidden="true" tabindex="-1"></a>    <span class="ex">├──</span> 0_raw</span>
+<span id="cb19-11"><a href="#cb19-11" aria-hidden="true" tabindex="-1"></a>    <span class="ex">│&nbsp;&nbsp;</span> ├── SRR17648356_1.fastq.gz</span>
+<span id="cb19-12"><a href="#cb19-12" aria-hidden="true" tabindex="-1"></a>    <span class="ex">│&nbsp;&nbsp;</span> ├── SRR17648356_2.fastq.gz</span>
+<span id="cb19-13"><a href="#cb19-13" aria-hidden="true" tabindex="-1"></a>    <span class="ex">│&nbsp;&nbsp;</span> ├── SRR17648378_1.fastq.gz</span>
+<span id="cb19-14"><a href="#cb19-14" aria-hidden="true" tabindex="-1"></a>    <span class="ex">│&nbsp;&nbsp;</span> ├── SRR17648378_2.fastq.gz</span>
+<span id="cb19-15"><a href="#cb19-15" aria-hidden="true" tabindex="-1"></a>    <span class="ex">│&nbsp;&nbsp;</span> ├── SRR17648422_1.fastq.gz</span>
+<span id="cb19-16"><a href="#cb19-16" aria-hidden="true" tabindex="-1"></a>    <span class="ex">│&nbsp;&nbsp;</span> ├── SRR17648422_2.fastq.gz</span>
+<span id="cb19-17"><a href="#cb19-17" aria-hidden="true" tabindex="-1"></a>    <span class="ex">│&nbsp;&nbsp;</span> ├── SRR17648430_1.fastq.gz</span>
+<span id="cb19-18"><a href="#cb19-18" aria-hidden="true" tabindex="-1"></a>    <span class="ex">│&nbsp;&nbsp;</span> ├── SRR17648430_2.fastq.gz</span>
+<span id="cb19-19"><a href="#cb19-19" aria-hidden="true" tabindex="-1"></a>    <span class="ex">│&nbsp;&nbsp;</span> ├── SRR17648436_1.fastq.gz</span>
+<span id="cb19-20"><a href="#cb19-20" aria-hidden="true" tabindex="-1"></a>    <span class="ex">│&nbsp;&nbsp;</span> ├── SRR17648436_2.fastq.gz</span>
+<span id="cb19-21"><a href="#cb19-21" aria-hidden="true" tabindex="-1"></a>    <span class="ex">│&nbsp;&nbsp;</span> ├── SRR17648441_1.fastq.gz</span>
+<span id="cb19-22"><a href="#cb19-22" aria-hidden="true" tabindex="-1"></a>    <span class="ex">│&nbsp;&nbsp;</span> └── SRR17648441_2.fastq.gz</span>
+<span id="cb19-23"><a href="#cb19-23" aria-hidden="true" tabindex="-1"></a>    <span class="ex">├──</span> 1_QC</span>
+<span id="cb19-24"><a href="#cb19-24" aria-hidden="true" tabindex="-1"></a>    <span class="ex">│&nbsp;&nbsp;</span> ├── SRR17648356_1_cutadapt.fastq.gz</span>
+<span id="cb19-25"><a href="#cb19-25" aria-hidden="true" tabindex="-1"></a>    <span class="ex">│&nbsp;&nbsp;</span> ├── SRR17648356_1_cutadapt.trimmed.fastq.gz</span>
+<span id="cb19-26"><a href="#cb19-26" aria-hidden="true" tabindex="-1"></a>    <span class="ex">│&nbsp;&nbsp;</span> ├── SRR17648356_1_cutadapt.trimmed_kneaddata.log</span>
+<span id="cb19-27"><a href="#cb19-27" aria-hidden="true" tabindex="-1"></a>    <span class="ex">│&nbsp;&nbsp;</span> ├── SRR17648356_1_cutadapt.trimmed_kneaddata.repeats.removed.1.fastq</span>
+<span id="cb19-28"><a href="#cb19-28" aria-hidden="true" tabindex="-1"></a>    <span class="ex">│&nbsp;&nbsp;</span> ├── SRR17648356_1_cutadapt.trimmed_kneaddata.repeats.removed.2.fastq</span>
+<span id="cb19-29"><a href="#cb19-29" aria-hidden="true" tabindex="-1"></a>    <span class="ex">│&nbsp;&nbsp;</span> ├── SRR17648356_1_cutadapt.trimmed_kneaddata_hg_39_bowtie2_paired_contam_1.fastq</span>
+<span id="cb19-30"><a href="#cb19-30" aria-hidden="true" tabindex="-1"></a>    <span class="ex">│&nbsp;&nbsp;</span> ├── SRR17648356_1_cutadapt.trimmed_kneaddata_hg_39_bowtie2_paired_contam_2.fastq</span>
+<span id="cb19-31"><a href="#cb19-31" aria-hidden="true" tabindex="-1"></a>    <span class="ex">│&nbsp;&nbsp;</span> ├── SRR17648356_1_cutadapt.trimmed_kneaddata_hg_39_bowtie2_unmatched_1_contam.fastq</span>
+<span id="cb19-32"><a href="#cb19-32" aria-hidden="true" tabindex="-1"></a>    <span class="ex">│&nbsp;&nbsp;</span> ├── SRR17648356_1_cutadapt.trimmed_kneaddata_hg_39_bowtie2_unmatched_2_contam.fastq</span>
+<span id="cb19-33"><a href="#cb19-33" aria-hidden="true" tabindex="-1"></a>    <span class="ex">│&nbsp;&nbsp;</span> ├── SRR17648356_1_cutadapt.trimmed_kneaddata_paired_1.fastq</span>
+<span id="cb19-34"><a href="#cb19-34" aria-hidden="true" tabindex="-1"></a>    <span class="ex">│&nbsp;&nbsp;</span> ├── SRR17648356_1_cutadapt.trimmed_kneaddata_paired_2.fastq</span>
+<span id="cb19-35"><a href="#cb19-35" aria-hidden="true" tabindex="-1"></a>    <span class="ex">│&nbsp;&nbsp;</span> ├── SRR17648356_1_cutadapt.trimmed_kneaddata_unmatched_1.fastq</span>
+<span id="cb19-36"><a href="#cb19-36" aria-hidden="true" tabindex="-1"></a>    <span class="ex">│&nbsp;&nbsp;</span> ├── SRR17648356_1_cutadapt.trimmed_kneaddata_unmatched_2.fastq</span>
+<span id="cb19-37"><a href="#cb19-37" aria-hidden="true" tabindex="-1"></a>    <span class="ex">│&nbsp;&nbsp;</span> ├── SRR17648356_1_discard.fastq</span>
+<span id="cb19-38"><a href="#cb19-38" aria-hidden="true" tabindex="-1"></a>    <span class="ex">│&nbsp;&nbsp;</span> ├── SRR17648356_2_cutadapt.fastq.gz</span>
+<span id="cb19-39"><a href="#cb19-39" aria-hidden="true" tabindex="-1"></a>    <span class="ex">│&nbsp;&nbsp;</span> ├── SRR17648356_2_cutadapt.trimmed.fastq.gz</span>
+<span id="cb19-40"><a href="#cb19-40" aria-hidden="true" tabindex="-1"></a>    <span class="ex">│&nbsp;&nbsp;</span> ├── SRR17648356_2_discard.fastq</span>
+<span id="cb19-41"><a href="#cb19-41" aria-hidden="true" tabindex="-1"></a>    <span class="ex">│&nbsp;&nbsp;</span> ├── SRR17648356_cutadapt.log</span>
+<span id="cb19-42"><a href="#cb19-42" aria-hidden="true" tabindex="-1"></a>    <span class="ex">│&nbsp;&nbsp;</span> └── SRR17648356_trimmomatic.log</span>
+<span id="cb19-43"><a href="#cb19-43" aria-hidden="true" tabindex="-1"></a>    <span class="ex">├──</span> 2_kraken2</span>
+<span id="cb19-44"><a href="#cb19-44" aria-hidden="true" tabindex="-1"></a>    <span class="ex">├──</span> 3_bracken</span>
+<span id="cb19-45"><a href="#cb19-45" aria-hidden="true" tabindex="-1"></a>    <span class="ex">└──</span> 4_humann</span>
+<span id="cb19-46"><a href="#cb19-46" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-47"><a href="#cb19-47" aria-hidden="true" tabindex="-1"></a><span class="ex">├──</span> Miniconda3-latest-Linux-x86_64.sh</span>
+<span id="cb19-48"><a href="#cb19-48" aria-hidden="true" tabindex="-1"></a><span class="ex">├──</span> bin</span>
+<span id="cb19-49"><a href="#cb19-49" aria-hidden="true" tabindex="-1"></a><span class="ex">│&nbsp;&nbsp;</span> ├── Bracken</span>
+<span id="cb19-50"><a href="#cb19-50" aria-hidden="true" tabindex="-1"></a><span class="ex">│&nbsp;&nbsp;</span> ├── Trimmomatic-0.39</span>
+<span id="cb19-51"><a href="#cb19-51" aria-hidden="true" tabindex="-1"></a><span class="ex">│&nbsp;&nbsp;</span> ├── automnt.sh</span>
+<span id="cb19-52"><a href="#cb19-52" aria-hidden="true" tabindex="-1"></a><span class="ex">│&nbsp;&nbsp;</span> ├── aws_install.sh</span>
+<span id="cb19-53"><a href="#cb19-53" aria-hidden="true" tabindex="-1"></a><span class="ex">│&nbsp;&nbsp;</span> ├── conda_install.sh</span>
+<span id="cb19-54"><a href="#cb19-54" aria-hidden="true" tabindex="-1"></a><span class="ex">│&nbsp;&nbsp;</span> ├── github_keyload.sh</span>
+<span id="cb19-55"><a href="#cb19-55" aria-hidden="true" tabindex="-1"></a><span class="ex">│&nbsp;&nbsp;</span> ├── github_setup.sh</span>
+<span id="cb19-56"><a href="#cb19-56" aria-hidden="true" tabindex="-1"></a><span class="ex">│&nbsp;&nbsp;</span> ├── keys</span>
+<span id="cb19-57"><a href="#cb19-57" aria-hidden="true" tabindex="-1"></a><span class="ex">│&nbsp;&nbsp;</span> ├── kraken2</span>
+<span id="cb19-58"><a href="#cb19-58" aria-hidden="true" tabindex="-1"></a><span class="ex">│&nbsp;&nbsp;</span> ├── pull-manifest.sh</span>
+<span id="cb19-59"><a href="#cb19-59" aria-hidden="true" tabindex="-1"></a><span class="ex">│&nbsp;&nbsp;</span> ├── set_repo.sh</span>
+<span id="cb19-60"><a href="#cb19-60" aria-hidden="true" tabindex="-1"></a><span class="ex">│&nbsp;&nbsp;</span> └── sratoolkit.3.2.1-ubuntu64</span>
+<span id="cb19-61"><a href="#cb19-61" aria-hidden="true" tabindex="-1"></a><span class="ex">├──</span> data</span>
+<span id="cb19-62"><a href="#cb19-62" aria-hidden="true" tabindex="-1"></a><span class="ex">│&nbsp;&nbsp;</span> ├── db_standard</span>
+<span id="cb19-63"><a href="#cb19-63" aria-hidden="true" tabindex="-1"></a><span class="ex">│&nbsp;&nbsp;</span> ├── humann_db</span>
+<span id="cb19-64"><a href="#cb19-64" aria-hidden="true" tabindex="-1"></a><span class="ex">│&nbsp;&nbsp;</span> ├── kneaddata_db</span>
+<span id="cb19-65"><a href="#cb19-65" aria-hidden="true" tabindex="-1"></a><span class="ex">│&nbsp;&nbsp;</span> └── nohup.out</span>
+<span id="cb19-66"><a href="#cb19-66" aria-hidden="true" tabindex="-1"></a><span class="ex">├──</span> log</span>
+<span id="cb19-67"><a href="#cb19-67" aria-hidden="true" tabindex="-1"></a><span class="ex">├──</span> miniconda3</span>
+<span id="cb19-68"><a href="#cb19-68" aria-hidden="true" tabindex="-1"></a><span class="ex">│&nbsp;&nbsp;</span> ├── LICENSE.txt</span>
+<span id="cb19-69"><a href="#cb19-69" aria-hidden="true" tabindex="-1"></a><span class="ex">│&nbsp;&nbsp;</span> ├── _conda</span>
+<span id="cb19-70"><a href="#cb19-70" aria-hidden="true" tabindex="-1"></a><span class="ex">│&nbsp;&nbsp;</span> ├── bin</span>
+<span id="cb19-71"><a href="#cb19-71" aria-hidden="true" tabindex="-1"></a><span class="ex">│&nbsp;&nbsp;</span> ├── compiler_compat</span>
+<span id="cb19-72"><a href="#cb19-72" aria-hidden="true" tabindex="-1"></a><span class="ex">│&nbsp;&nbsp;</span> ├── conda-meta</span>
+<span id="cb19-73"><a href="#cb19-73" aria-hidden="true" tabindex="-1"></a><span class="ex">│&nbsp;&nbsp;</span> ├── condabin</span>
+<span id="cb19-74"><a href="#cb19-74" aria-hidden="true" tabindex="-1"></a><span class="ex">│&nbsp;&nbsp;</span> ├── envs</span>
+<span id="cb19-75"><a href="#cb19-75" aria-hidden="true" tabindex="-1"></a><span class="ex">│&nbsp;&nbsp;</span> ├── etc</span>
+<span id="cb19-76"><a href="#cb19-76" aria-hidden="true" tabindex="-1"></a><span class="ex">│&nbsp;&nbsp;</span> ├── include</span>
+<span id="cb19-77"><a href="#cb19-77" aria-hidden="true" tabindex="-1"></a><span class="ex">│&nbsp;&nbsp;</span> ├── lib</span>
+<span id="cb19-78"><a href="#cb19-78" aria-hidden="true" tabindex="-1"></a><span class="ex">│&nbsp;&nbsp;</span> ├── libexec</span>
+<span id="cb19-79"><a href="#cb19-79" aria-hidden="true" tabindex="-1"></a><span class="ex">│&nbsp;&nbsp;</span> ├── man</span>
+<span id="cb19-80"><a href="#cb19-80" aria-hidden="true" tabindex="-1"></a><span class="ex">│&nbsp;&nbsp;</span> ├── pkgs</span>
+<span id="cb19-81"><a href="#cb19-81" aria-hidden="true" tabindex="-1"></a><span class="ex">│&nbsp;&nbsp;</span> ├── share</span>
+<span id="cb19-82"><a href="#cb19-82" aria-hidden="true" tabindex="-1"></a><span class="ex">│&nbsp;&nbsp;</span> ├── shell</span>
+<span id="cb19-83"><a href="#cb19-83" aria-hidden="true" tabindex="-1"></a><span class="ex">│&nbsp;&nbsp;</span> ├── ssl</span>
+<span id="cb19-84"><a href="#cb19-84" aria-hidden="true" tabindex="-1"></a><span class="ex">│&nbsp;&nbsp;</span> ├── uninstall.sh</span>
+<span id="cb19-85"><a href="#cb19-85" aria-hidden="true" tabindex="-1"></a><span class="ex">│&nbsp;&nbsp;</span> └── x86_64-conda-linux-gnu</span>
+<span id="cb19-86"><a href="#cb19-86" aria-hidden="true" tabindex="-1"></a><span class="ex">├──</span> old</span>
+<span id="cb19-87"><a href="#cb19-87" aria-hidden="true" tabindex="-1"></a><span class="ex">│&nbsp;&nbsp;</span> ├── Bracken</span>
+<span id="cb19-88"><a href="#cb19-88" aria-hidden="true" tabindex="-1"></a><span class="ex">│&nbsp;&nbsp;</span> ├── kraken2</span>
+<span id="cb19-89"><a href="#cb19-89" aria-hidden="true" tabindex="-1"></a><span class="ex">│&nbsp;&nbsp;</span> └── miniconda_list.html</span>
+<span id="cb19-90"><a href="#cb19-90" aria-hidden="true" tabindex="-1"></a><span class="ex">└──</span> snap</span>
+<span id="cb19-91"><a href="#cb19-91" aria-hidden="true" tabindex="-1"></a>    <span class="ex">└──</span> tree</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="runs" class="level2">
+<h2 class="anchored" data-anchor-id="runs">RUNs</h2>
+<ul>
+<li>config.sh</li>
+</ul>
+<ul>
+<li>RUN_0_raw.sh</li>
+</ul>
+<ul>
+<li>RUN_1_QC.sh</li>
+</ul>
 </section>
 <section id="preprocemiento" class="level2">
 <h2 class="anchored" data-anchor-id="preprocemiento">Preprocemiento</h2>
 <p>Con este paso quitamos ADN contaminante del hospedero y eliminamos secuencias adaptadoras.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="ex">kneaddata</span> <span class="at">-i1</span> SRR17648356_1.fastq.gz<span class="dt">\</span></span>
-<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>-i2 SRR17648356_2.fastq.gz <span class="at">--output</span> out_kneaddata<span class="dt">\</span></span>
-<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>--reference-db kneaddata_db <span class="at">--threads</span> 8<span class="dt">\</span></span>
-<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a>--trimmomatic-options=<span class="st">"LEADING:10"</span><span class="dt">\</span></span>
-<span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a>--trimmomatic-options=<span class="st">"TRAILING:10"</span><span class="dt">\</span></span>
-<span id="cb17-6"><a href="#cb17-6" aria-hidden="true" tabindex="-1"></a>--trimmomatic-options=<span class="st">"SLIDINGWINDOW:4:20"</span><span class="dt">\</span></span>
-<span id="cb17-7"><a href="#cb17-7" aria-hidden="true" tabindex="-1"></a>--trimmomatic-options=<span class="st">"MINLEN:60"</span> <span class="op">&gt;</span> <span class="va">$SRR17648356</span>-<span class="va">$(</span><span class="fu">date</span> +%s<span class="va">)</span>_kneaddata.log <span class="dv">2</span><span class="op">&gt;&amp;</span><span class="dv">1</span></span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="ex">kneaddata</span> <span class="at">-i1</span> SRR17648356_1.fastq.gz<span class="dt">\</span></span>
+<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>-i2 SRR17648356_2.fastq.gz <span class="at">--output</span> out_kneaddata<span class="dt">\</span></span>
+<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a>--reference-db kneaddata_db <span class="at">--threads</span> 8<span class="dt">\</span></span>
+<span id="cb20-4"><a href="#cb20-4" aria-hidden="true" tabindex="-1"></a>--trimmomatic-options=<span class="st">"LEADING:10"</span><span class="dt">\</span></span>
+<span id="cb20-5"><a href="#cb20-5" aria-hidden="true" tabindex="-1"></a>--trimmomatic-options=<span class="st">"TRAILING:10"</span><span class="dt">\</span></span>
+<span id="cb20-6"><a href="#cb20-6" aria-hidden="true" tabindex="-1"></a>--trimmomatic-options=<span class="st">"SLIDINGWINDOW:4:20"</span><span class="dt">\</span></span>
+<span id="cb20-7"><a href="#cb20-7" aria-hidden="true" tabindex="-1"></a>--trimmomatic-options=<span class="st">"MINLEN:60"</span> <span class="op">&gt;</span> <span class="va">$SRR17648356</span>-<span class="va">$(</span><span class="fu">date</span> +%s<span class="va">)</span>_kneaddata.log <span class="dv">2</span><span class="op">&gt;&amp;</span><span class="dv">1</span></span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 </section>
