@@ -148,6 +148,7 @@ kneaddata_database --download human_genome bowtie2 /home/ubuntu/data/kneaddata_d
 ```{bash, eval=FALSE}
 cd /home/ubuntu/bin
 wget http://www.usadellab.org/cms/uploads/supplementary/Trimmomatic/Trimmomatic-0.39.zip
+unzip Trimmomatic-0.39.zip
 ```
 
 ### CutAdapt
