@@ -427,3 +427,43 @@ kneaddata -i1 SRR17648356_1.fastq.gz\
 --trimmomatic-options="SLIDINGWINDOW:4:20"\
 --trimmomatic-options="MINLEN:60" > $SRR17648356-$(date +%s)_kneaddata.log 2>&1
 ```
+
+Para evitar que la memoria se llene
+
+```{bash, eval=FALSE}
+#!/bin/bash
+
+# Source the config file
+source config.sh
+
+# Loop over each ID provided as argument
+for file in "$@"; do
+    # Define basename based on the input pattern
+    basename="${file}_1_cutadapt.trimmed"
+    
+    # Define the kept files (before gzipping)
+    kept1="${qcdir}/${basename}_kneaddata_paired_1.fastq"
+    kept2="${qcdir}/${basename}_kneaddata_paired_2.fastq"
+    
+    # Run kneaddata
+    kneaddata \
+        -i1 "${qcdir}/${file}_1_cutadapt.trimmed.fastq.gz" \
+        -i2 "${qcdir}/${file}_2_cutadapt.trimmed.fastq.gz" \
+        --output "${qcdir}" \
+        --reference-db "${dbs}/kneaddata_db" \
+        --threads "${threads}" \
+        --bypass-trim > "${logdir}/${file}-$(date +%s)_kneaddata.log" 2>&1
+    
+    # Compress the kept files
+    gzip "${kept1}"
+    gzip "${kept2}"
+    
+    # Define the compressed kept files
+    kept1_gz="${kept1}.gz"
+    kept2_gz="${kept2}.gz"
+    
+    # Delete all other files related to this ID
+    find "${qcdir}" -name "${file}_*" ! -name "$(basename "${kept1_gz}")" ! -name "$(basename "${kept2_gz}")" -delete
+done
+
+```
