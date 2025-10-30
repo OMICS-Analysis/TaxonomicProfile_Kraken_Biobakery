@@ -284,6 +284,18 @@ gzip SRR17648356_2.fastq
     └── tree
 ```
 
+## Data
+
+```{bash, eval=FALSE}
+4.1G	./kneaddata_db
+93G	./db_standard
+16G	./humann_db/chocophlan
+34G	./humann_db/uniref
+2.6G	./humann_db/utility_mapping
+52G	./humann_db
+149G	.
+```
+
 ## RUNs
 
 -   config.sh
